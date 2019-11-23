@@ -1,9 +1,11 @@
-CREATE TABLE description(
-	des_id INT AUTO_INCREMENT,
+CREATE TABLE spec(
+	spec_id INT AUTO_INCREMENT,
 	title VARCHAR(100) NOT NULL,
-	content VARCHAR(500) NOT NULL,
-	type_des VARCHAR(50) NOT NULL,
-	image_id INT,
-	PRIMARY KEY(des_id),
-	FOREIGN KEY(image_id) REFERENCES image(image_id)
+	spec_name VARCHAR(50) NOT NULL,
+	des VARCHAR(200) NOT NULL,
+	dram VARCHAR(20) NOT NULL,
+	detail VARCHAR(50) NOT NULL,
+	car_id INT NOT NULL,
+	PRIMARY KEY (spec_id),
+	FOREIGN KEY(car_id) REFERENCES car(car_id)
 );
