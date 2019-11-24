@@ -40,6 +40,18 @@ CREATE TABLE user(
 	role VARCHAR(20) NOT NULL,
 	PRIMARY KEY(user_id)
 );
+CREATE TABLE post(
+	post_id INT AUTO_INCREMENT,
+	title VARCHAR(100) NOT NULL,
+	content VARCHAR(500) NOT NULL,
+	time_update DATE NOT NULL,
+	user_id INT NOT NULL,
+	image_id INT NOT NULL,
+	TYPE VARCHAR(50) NOT NULL,
+	PRIMARY KEY (post_id),
+	FOREIGN KEY (user_id) REFERENCES user(user_id),
+	FOREIGN KEY(image_id) REFERENCES image(image_id)
+);
 CREATE TABLE comment(
 	comment_id INT AUTO_INCREMENT,
 	title VARCHAR(100) NOT NULL,
@@ -51,17 +63,7 @@ CREATE TABLE comment(
 	FOREIGN KEY (user_id) REFERENCES user(user_id),
 	FOREIGN KEY (post_id) REFERENCES post(post_id)
 );
-CREATE TABLE post(
-	post_id INT AUTO_INCREMENT,
-	title VARCHAR(100) NOT NULL,
-	content VARCHAR(500) NOT NULL,
-	time_update DATE NOT NULL,
-	user_id INT NOT NULL,
-	TYPE VARCHAR(50) NOT NULL,
-	PRIMARY KEY (post_id),
-	FOREIGN KEY (user_id) REFERENCES user(user_id)
-);
-CREATE TABLE spec( --thong so ky thuat
+CREATE TABLE spec(
 	spec_id INT AUTO_INCREMENT,
 	title VARCHAR(100) NOT NULL,
 	spec_name VARCHAR(50) NOT NULL,
