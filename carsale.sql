@@ -3,7 +3,7 @@ use carsale;
 CREATE TABLE image(
 	image_id INT AUTO_INCREMENT,
 	url VARCHAR(100) NOT NULL,
-	type_image VARCHAR(50) NOT NULL, -- loai image: post, car, spec
+	type_image VARCHAR(50) NOT NULL,
 	PRIMARY KEY(image_id)
 );
 CREATE TABLE description(
