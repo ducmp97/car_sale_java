@@ -29,7 +29,7 @@
 			<img src="./icon/gmail_header48px.png" /> <span
 				style="color: aliceblue;"><%=resourceBundle.getString("email")%></span>
 			&nbsp; <img src="./icon/phone_52px.png" /> <span
-				style="color: aliceblue;">+84 39 559 2104</span>
+				style="color: aliceblue;"><%=resourceBundle.getString("phone")%></span>
 		</div>
 		<div class=" header-right ">
 			<a class="active" href="listCarPrice.jsp"><%=resourceBundle.getString("banggiaxe")%></a>
