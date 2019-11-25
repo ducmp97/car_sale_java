@@ -3,7 +3,9 @@ package carsale.model;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.ArrayList;
 
+// TODO: Auto-generated Javadoc
 /**
  * The Class Post.
  */
@@ -30,8 +32,8 @@ public class Post implements Serializable {
   /** The user. */
   private User user;
 
-  /** The image. */
-  private Image image;
+  /** The list image. */
+  private ArrayList<Image> listImage;
 
   /**
    * Instantiates a new post.
@@ -55,11 +57,11 @@ public class Post implements Serializable {
    *          the post type
    * @param user
    *          the user
-   * @param image
-   *          the image
+   * @param listImage
+   *          the list image
    */
   public Post(int postId, String postTitle, String postContent, Date timeUpdate,
-      String postType, User user, Image image) {
+      String postType, User user, ArrayList<Image> listImage) {
     super();
     this.postId = postId;
     this.postTitle = postTitle;
@@ -67,7 +69,7 @@ public class Post implements Serializable {
     this.timeUpdate = timeUpdate;
     this.postType = postType;
     this.user = user;
-    this.image = image;
+    this.listImage = listImage;
   }
 
   /**
@@ -185,22 +187,22 @@ public class Post implements Serializable {
   }
 
   /**
-   * Gets the image.
+   * Gets the list image.
    *
-   * @return the image
+   * @return the listImage
    */
-  public Image getImage() {
-    return image;
+  public ArrayList<Image> getListImage() {
+    return listImage;
   }
 
   /**
-   * Sets the image.
+   * Sets the list image.
    *
-   * @param image
-   *          the image to set
+   * @param listImage
+   *          the listImage to set
    */
-  public void setImage(Image image) {
-    this.image = image;
+  public void setListImage(ArrayList<Image> listImage) {
+    this.listImage = listImage;
   }
 
   /**
@@ -212,7 +214,7 @@ public class Post implements Serializable {
   public String toString() {
     return "Post [postId=" + postId + ", postTitle=" + postTitle + ", postContent="
         + postContent + ", timeUpdate=" + timeUpdate + ", postType=" + postType + ", user="
-        + user + ", image=" + image + "]";
+        + user + ", listImage=" + listImage + "]";
   }
 
 }

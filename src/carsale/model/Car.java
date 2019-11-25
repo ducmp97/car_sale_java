@@ -2,7 +2,9 @@
 package carsale.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
+// TODO: Auto-generated Javadoc
 /**
  * The Class Car.
  */
@@ -26,8 +28,8 @@ public class Car implements Serializable {
   /** The car des. */
   private String carDes;
 
-  /** The image. */
-  private Image image;
+  /** The list image. */
+  private ArrayList<Image> listImage;
 
   /** The description. */
   private Description description;
@@ -52,20 +54,20 @@ public class Car implements Serializable {
    *          the car status
    * @param carDes
    *          the car des
-   * @param image
-   *          the image
+   * @param listImage
+   *          the list image
    * @param description
    *          the description
    */
   public Car(int carId, String carName, String carCategory, String carStatus, String carDes,
-      Image image, Description description) {
+      ArrayList<Image> listImage, Description description) {
     super();
     this.carId = carId;
     this.carName = carName;
     this.carCategory = carCategory;
     this.carStatus = carStatus;
     this.carDes = carDes;
-    this.image = image;
+    this.listImage = listImage;
     this.description = description;
   }
 
@@ -165,22 +167,22 @@ public class Car implements Serializable {
   }
 
   /**
-   * Gets the image.
+   * Gets the list image.
    *
-   * @return the image
+   * @return the listImage
    */
-  public Image getImage() {
-    return image;
+  public ArrayList<Image> getListImage() {
+    return listImage;
   }
 
   /**
-   * Sets the image.
+   * Sets the list image.
    *
-   * @param image
-   *          the image to set
+   * @param listImage
+   *          the listImage to set
    */
-  public void setImage(Image image) {
-    this.image = image;
+  public void setListImage(ArrayList<Image> listImage) {
+    this.listImage = listImage;
   }
 
   /**
@@ -210,7 +212,7 @@ public class Car implements Serializable {
   @Override
   public String toString() {
     return "Car [carId=" + carId + ", carName=" + carName + ", carCategory=" + carCategory
-        + ", carStatus=" + carStatus + ", carDes=" + carDes + ", image=" + image
+        + ", carStatus=" + carStatus + ", carDes=" + carDes + ", listImage=" + listImage
         + ", description=" + description + "]";
   }
 
