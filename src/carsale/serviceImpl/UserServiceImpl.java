@@ -5,6 +5,7 @@ package carsale.serviceImpl;
 
 import java.util.ArrayList;
 
+import at.favre.lib.crypto.bcrypt.BCrypt;
 import carsale.dao.UserDao;
 import carsale.dao.impl.UserDaoImpl;
 import carsale.model.User;
@@ -17,13 +18,14 @@ import carsale.service.UserService;
 public class UserServiceImpl implements UserService {
 
   private UserDao userDao;
-  
+  private BCrypt bCrypt;
   
   /**
    * @param userDao
    */
   public UserServiceImpl() {
     userDao= new UserDaoImpl();
+    
   }
 
   /**
@@ -61,9 +63,11 @@ public class UserServiceImpl implements UserService {
    * @see carsale.service.UserService#insertUser(carsale.model.User)
    */
   @Override
-  public int insertUser(User user) {
-    // TODO Auto-generated method stub
-    return 0;
+  public Long insertUser(User user) {
+    String passwordEncoding = BCrypt.withDefaults().hashToString(12, user.getPassword().toCharArray());
+    user.setPassword(passwordEncoding);
+    System.out.println("Password encodeing: "+user.toString());
+    return userDao.insertUser(user);
   }
 
   /**
@@ -92,7 +96,17 @@ public class UserServiceImpl implements UserService {
    */
   @Override
   public User isExits(String username, String password) { 
+    
     return userDao.isExits(username, password);
+  }
+
+  /**
+   * {@inheritDoc}
+   * @see carsale.service.UserService#getByUsername(java.lang.String)
+   */
+  @Override
+  public User getByUsername(String userName) {
+    return userDao.getByUsername(userName);
   }
 
 }

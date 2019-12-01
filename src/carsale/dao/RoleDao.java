@@ -3,13 +3,12 @@
  */
 package carsale.dao;
 
-import carsale.model.User;
+import carsale.model.Role;
 
 /**
  * @author <a href="mailto:developer@hitachiconsulting.com">minhduc97.ptit</a>
+ *
  */
-public interface UserDao extends GennericDao<User> {
-  User isExits(String userName, String password);
-  User getByUsername(String userName);
-  Long insertUser(User user);
+public interface RoleDao {
+  public Role getRoleById(int roleId);
 }

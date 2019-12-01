@@ -5,6 +5,7 @@ package carsale.security;
 
 import javax.servlet.http.HttpServletRequest;
 
+import at.favre.lib.crypto.bcrypt.BCrypt;
 import carsale.model.User;
 import carsale.service.UserService;
 import carsale.serviceImpl.UserServiceImpl;
@@ -15,6 +16,7 @@ public class AuthenticationImpl implements Authentication {
   private String userName;
   private String password;
   private UserService userService;
+  private BCrypt bcrypt;
 
   /**
    * {@inheritDoc}
@@ -25,16 +27,22 @@ public class AuthenticationImpl implements Authentication {
   public String urlRediect(HttpServletRequest req) {
     User user = null;
     try {
-      user = userService.isExits(this.userName, this.password);
-      System.out.println(user);
+      //Tim user qua username
+      User userModel= userService.getByUsername(this.userName);
+      //Giai ma mat khau 
+      BCrypt.Result result = BCrypt.verifyer().verify(password.toCharArray(), userModel.getPassword());
+      if(result.verified) {
+        user=userModel;
+      }
+      System.out.println(userModel);
     } catch (NullPointerException e) {
       System.out.println(e.getMessage());
-      return "/login?action=signin&user=null";
+      return "/login.jsp";
     }
     if (user != null) {
       SessionUtil.getInstance().putValue(req, "USER", user);
       if (user.getRole().getRoleName().equals("ADMIN")) {
-        return "/admin/home";
+        return "/admin-home";
       } else if (user.getRole().getRoleName().equals("USER")) {
         return "/trang-chu";
       }

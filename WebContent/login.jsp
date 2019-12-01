@@ -1,15 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Login</title>
 </head>
 <body>
 	<div align="center">
-		<h1>Login Form</h1>
-		<h2>${mess}</h2>
+		<h1>Đăng nhập</h1>
+		<h2>${message}</h2>
 		<form action="login" method="post">
 			<table style="with: 100%">
 				<tr>
@@ -24,7 +24,7 @@
 			</table>
 			<input type="submit" value="submit" name="action" />
 		</form>
-		<a href="register.jsp">Register Account</a>
+		<a href="href="login?action=signup"">Đăng ký tài khoản</a>
 	</div>
 </body>
 </html>

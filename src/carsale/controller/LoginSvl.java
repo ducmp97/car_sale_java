@@ -3,6 +3,7 @@ package carsale.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import carsale.model.User;
 import carsale.security.Authentication;
 import carsale.untils.FormUtil;
+import carsale.untils.SessionUtil;
 
 /**
  * Servlet implementation class LoginSvl
@@ -39,32 +41,16 @@ public class LoginSvl extends HttpServlet {
       if (action.equals("signin")) {
         if (request.getParameter("user") != null) {
           request.setAttribute("message", "Tài khoản hoặc mật khẩu sai !");
-          request.setAttribute("alert", "danger");
-        } else {
-          PrintWriter out = response.getWriter();
-          out.print("Susgest");
+          RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
+          rd.forward(request, response);
         }
-        // RequestDispatcher rd =
-        // request.getRequestDispatcher("/views/login/signin.jsp");
-        // rd.forward(request, response);
       } else if (action.equals("signup")) {
-        // RequestDispatcher rd =
-        // request.getRequestDispatcher("/views/login/signup.jsp");
-        // rd.forward(request, response);
-      } else if (action.equals("forget")) {
-        // RequestDispatcher rd =
-        // request.getRequestDispatcher("/views/login/forget.jsp");
-        // rd.forward(request, response);
-      } else if (action.equals("logout")) {
-        // SessionUtil.getInstance().removeValue(request, "USERMODEL");
-        // response.sendRedirect(request.getContextPath() + "/trang-chu");
+        RequestDispatcher rd = request.getRequestDispatcher("register.jsp");
+        rd.forward(request, response);
       }
     } else {
-      // RequestDispatcher rd =
-      // request.getRequestDispatcher("/views/web/home.jsp");
-      // rd.forward(request, response);
-      PrintWriter out = response.getWriter();
-      out.print("Susgest");
+      RequestDispatcher rd = request.getRequestDispatcher("admin-home.jsp");
+      rd.forward(request, response);
     }
   }
 
@@ -79,12 +65,11 @@ public class LoginSvl extends HttpServlet {
       User user = FormUtil.toModel(User.class, request);
       System.out.println(user.getUserName());
       System.out.println(user.getPassword());
+      System.out.println(user.getEmail());
+      System.out.println("Signup: " + user.toString());
       String url =
           Authentication.of(user.getUserName(), user.getPassword()).urlRediect(request);
       System.out.println(url);
-      PrintWriter out = response.getWriter();
-      out.print("Susgest");
-      //System.out.println(user.toString());
       response.sendRedirect(request.getContextPath() + url);
     }
   }
