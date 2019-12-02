@@ -16,7 +16,7 @@ import carsale.untils.FormUtil;
 /**
  * Servlet implementation class LoginSvl
  */
-@WebServlet(urlPatterns = {"/trang-chu", "/login" })
+@WebServlet(urlPatterns = {"/login" })
 public class LoginSvl extends HttpServlet {
   private static final long serialVersionUID = 1L;
 

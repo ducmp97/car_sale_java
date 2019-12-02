@@ -1,6 +1,4 @@
-/*
- * (C) Copyright Global CyberSoft (GCS) 2019. All rights reserved. Proprietary and confidential.
- */
+
 package carsale.serviceImpl;
 
 import java.util.ArrayList;
@@ -11,25 +9,22 @@ import carsale.dao.impl.UserDaoImpl;
 import carsale.model.User;
 import carsale.service.UserService;
 
-/**
- * @author <a href="mailto:developer@hitachiconsulting.com">minhduc97.ptit</a>
- *
- */
 public class UserServiceImpl implements UserService {
 
   private UserDao userDao;
   private BCrypt bCrypt;
-  
+
   /**
    * @param userDao
    */
   public UserServiceImpl() {
-    userDao= new UserDaoImpl();
-    
+    userDao = new UserDaoImpl();
+
   }
 
   /**
    * {@inheritDoc}
+   * 
    * @see carsale.service.UserService#getAllUser()
    */
   @Override
@@ -40,6 +35,7 @@ public class UserServiceImpl implements UserService {
 
   /**
    * {@inheritDoc}
+   * 
    * @see carsale.service.UserService#login(java.lang.String, java.lang.String)
    */
   @Override
@@ -50,6 +46,7 @@ public class UserServiceImpl implements UserService {
 
   /**
    * {@inheritDoc}
+   * 
    * @see carsale.service.UserService#getUserById(int)
    */
   @Override
@@ -60,28 +57,32 @@ public class UserServiceImpl implements UserService {
 
   /**
    * {@inheritDoc}
+   * 
    * @see carsale.service.UserService#insertUser(carsale.model.User)
    */
   @Override
   public Long insertUser(User user) {
-    String passwordEncoding = BCrypt.withDefaults().hashToString(12, user.getPassword().toCharArray());
+    String passwordEncoding =
+        BCrypt.withDefaults().hashToString(12, user.getPassword().toCharArray());
     user.setPassword(passwordEncoding);
-    System.out.println("Password encodeing: "+user.toString());
+    System.out.println("Password encodeing: " + user.toString());
     return userDao.insertUser(user);
   }
 
   /**
    * {@inheritDoc}
+   * 
    * @see carsale.service.UserService#updateUser(carsale.model.User)
    */
   @Override
   public void updateUser(User user) {
     // TODO Auto-generated method stub
-    
+
   }
 
   /**
    * {@inheritDoc}
+   * 
    * @see carsale.service.UserService#deleteUser(int)
    */
   @Override
@@ -92,16 +93,19 @@ public class UserServiceImpl implements UserService {
 
   /**
    * {@inheritDoc}
-   * @see carsale.service.UserService#isExits(java.lang.String, java.lang.String)
+   * 
+   * @see carsale.service.UserService#isExits(java.lang.String,
+   *      java.lang.String)
    */
   @Override
-  public User isExits(String username, String password) { 
-    
+  public User isExits(String username, String password) {
+
     return userDao.isExits(username, password);
   }
 
   /**
    * {@inheritDoc}
+   * 
    * @see carsale.service.UserService#getByUsername(java.lang.String)
    */
   @Override
