@@ -82,10 +82,10 @@
 	</div>
 
 	<div class="w3-content w3-display-containner">
-		<img src="./img/slide/slide1.jpg" width="100%" height="350px" class="slide" alt="#">
-		<img src="./img/slide/slide2.jpg" width="100%" height="350px" class="slide" alt="#"> <img
-			src="./img/slide/slide3.jpg" width="100%" height="350px" class="slide" alt="#">
-		<img src="./img/slide/slide4.jpg" width="100%" height="350px" class="slide" alt="#">
+		<img src="img/slide/slide1.jpg" width="100%" height="350px" class="slide" alt="#">
+		<img src="img/slide/slide2.jpg" width="100%" height="350px" class="slide" alt="#"> <img
+			src="img/slide/slide3.jpg" width="100%" height="350px" class="slide" alt="#">
+		<img src="img/slide/slide4.jpg" width="100%" height="350px" class="slide" alt="#">
 	</div>
 	<div>
 		<script>

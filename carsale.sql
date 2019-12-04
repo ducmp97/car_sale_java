@@ -165,11 +165,11 @@ CREATE TABLE IF NOT EXISTS `image` (
   `image_id` int(11) NOT NULL AUTO_INCREMENT,
   `url` varchar(100) NOT NULL,
   `type_image` varchar(50) NOT NULL,
-  `car_id` int(11) NOT NULL,
+  `car_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`image_id`),
   KEY `car_id` (`car_id`),
   CONSTRAINT `image_ibfk_1` FOREIGN KEY (`car_id`) REFERENCES `car` (`car_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table carsale.image: ~54 rows (approximately)
 /*!40000 ALTER TABLE `image` DISABLE KEYS */;
@@ -227,7 +227,11 @@ INSERT INTO `image` (`image_id`, `url`, `type_image`, `car_id`) VALUES
 	(51, 'image/m5jaoi.png', 'nội thất', 20),
 	(52, 'image/zbjxtx.png', 'nội thất', 20),
 	(53, 'image/2bsp33.png', 'vận hành', 21),
-	(54, 'image/wsdem3.png', 'vận hành', 21);
+	(54, 'image/wsdem3.png', 'vận hành', 21),
+	(55, 'img/slide/slide1.jpg', 'slide', NULL),
+	(56, 'img/slide/slide2.jpg', 'slide', NULL),
+	(57, 'img/slide/slide3.jpg', 'slide', NULL),
+	(58, 'img/slide/slide4.jpg', 'slide', NULL);
 /*!40000 ALTER TABLE `image` ENABLE KEYS */;
 
 -- Dumping structure for table carsale.post
