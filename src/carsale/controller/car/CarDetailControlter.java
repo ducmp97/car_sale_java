@@ -1,7 +1,6 @@
-package carsale.controller;
+package carsale.controller.car;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,33 +12,54 @@ import com.google.gson.Gson;
 
 import carsale.model.Car;
 import carsale.service.CarService;
-import carsale.serviceImpl.CarServiceImpl;
+import carsale.service.Impl.CarServiceImpl;
 
+// TODO: Auto-generated Javadoc
 /**
- * Servlet implementation class ListPriceController
+ * Servlet implementation class CarDetailControlter.
  */
-@WebServlet("/list-price")
-public class ListPriceController extends HttpServlet {
+@WebServlet("/api/car-detail")
+public class CarDetailControlter extends HttpServlet {
+
+  /** The Constant serialVersionUID. */
   private static final long serialVersionUID = 1L;
+
+  /** The car service. */
   private CarService carService;
+
+  /** The gson. */
   private Gson gson;
 
   /**
+   * Instantiates a new car detail controlter.
+   *
    * @see HttpServlet#HttpServlet()
    */
-  public ListPriceController() {
+  public CarDetailControlter() {
     carService = new CarServiceImpl();
     gson = new Gson();
   }
 
   /**
+   * Do get.
+   *
+   * @param request
+   *          the request
+   * @param response
+   *          the response
+   * @throws ServletException
+   *           the servlet exception
+   * @throws IOException
+   *           Signals that an I/O exception has occurred.
    * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
    *      response)
    */
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
-    ArrayList<Car> list = carService.getListPrice();
-    String json = gson.toJson(list);
+    String id = request.getParameter("id");
+    int carId = Integer.parseInt(id);
+    Car car = carService.getCarById(carId);
+    String json = gson.toJson(car);
     response.setContentType("application/json");
     response.setCharacterEncoding("UTF-8");
     response.getWriter().write(json);

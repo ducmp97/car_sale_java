@@ -1,5 +1,5 @@
 
-package carsale.serviceImpl;
+package carsale.service.Impl;
 
 import java.util.ArrayList;
 
@@ -9,13 +9,20 @@ import carsale.dao.impl.UserDaoImpl;
 import carsale.model.User;
 import carsale.service.UserService;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class UserServiceImpl.
+ */
 public class UserServiceImpl implements UserService {
 
+  /** The user dao. */
   private UserDao userDao;
+
+  /** The b crypt. */
   private BCrypt bCrypt;
 
   /**
-   * @param userDao
+   * Instantiates a new user service impl.
    */
   public UserServiceImpl() {
     userDao = new UserDaoImpl();

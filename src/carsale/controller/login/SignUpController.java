@@ -1,4 +1,4 @@
-package carsale.controller;
+package carsale.controller.login;
 
 import java.io.IOException;
 
@@ -12,21 +12,46 @@ import javax.servlet.http.HttpServletResponse;
 import carsale.model.Role;
 import carsale.model.User;
 import carsale.service.RoleService;
-import carsale.serviceImpl.RoleServiceImpl;
-import carsale.serviceImpl.UserServiceImpl;
+import carsale.service.UserService;
+import carsale.service.Impl.RoleServiceImpl;
+import carsale.service.Impl.UserServiceImpl;
 import carsale.untils.FormUtil;
 
+// TODO: Auto-generated Javadoc
 /**
- * Servlet implementation class SignInController
+ * Servlet implementation class SignInController.
  */
 @WebServlet("/signup")
 public class SignUpController extends HttpServlet {
+
+  /** The Constant serialVersionUID. */
   private static final long serialVersionUID = 1L;
 
-  private UserServiceImpl userService = new UserServiceImpl();
-  private RoleService roleService = new RoleServiceImpl();
+  /** The user service. */
+  private UserService userService;
+
+  /** The role service. */
+  private RoleService roleService;
 
   /**
+   * Instantiates a new sign up controller.
+   */
+  public SignUpController() {
+    userService = new UserServiceImpl();
+    roleService = new RoleServiceImpl();
+  }
+
+  /**
+   * Do post.
+   *
+   * @param request
+   *          the request
+   * @param response
+   *          the response
+   * @throws ServletException
+   *           the servlet exception
+   * @throws IOException
+   *           Signals that an I/O exception has occurred.
    * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
    *      response)
    */

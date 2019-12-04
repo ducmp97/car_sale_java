@@ -1,7 +1,7 @@
 /*
  * (C) Copyright Global CyberSoft (GCS) 2019. All rights reserved. Proprietary and confidential.
  */
-package carsale.serviceImpl;
+package carsale.service.Impl;
 
 import carsale.dao.RoleDao;
 import carsale.dao.impl.RoleDaoImpl;

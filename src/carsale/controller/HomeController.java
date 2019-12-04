@@ -13,18 +13,27 @@ import com.google.gson.Gson;
 
 import carsale.model.Car;
 import carsale.service.CarService;
-import carsale.serviceImpl.CarServiceImpl;
+import carsale.service.Impl.CarServiceImpl;
 
+// TODO: Auto-generated Javadoc
 /**
- * Servlet implementation class HomeController
+ * Servlet implementation class HomeController.
  */
-@WebServlet("/trang-chu")
+@WebServlet("/api/trang-chu")
 public class HomeController extends HttpServlet {
+
+  /** The Constant serialVersionUID. */
   private static final long serialVersionUID = 1L;
+
+  /** The car service. */
   private CarService carService;
+
+  /** The gson. */
   private Gson gson;
 
   /**
+   * Instantiates a new home controller.
+   *
    * @see HttpServlet#HttpServlet()
    */
   public HomeController() {
@@ -33,6 +42,16 @@ public class HomeController extends HttpServlet {
   }
 
   /**
+   * Do get.
+   *
+   * @param request
+   *          the request
+   * @param response
+   *          the response
+   * @throws ServletException
+   *           the servlet exception
+   * @throws IOException
+   *           Signals that an I/O exception has occurred.
    * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
    *      response)
    */

@@ -4,22 +4,22 @@
 
 <!DOCTYPE html>
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta charset="UTF-8">
-<link href="css/styles.css" rel="stylesheet" type="text/css" />
 
-<link href="css/content.css" rel="stylesheet" type="text/css" />
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Car-sale</title>
-<link rel="stylesheet" href="./css/slider.css">
-<link
-	href="https://fonts.googleapis.com/css?family=Be+Vietnam&display=swap"
-	rel="stylesheet">
-<script src="https://kit.fontawesome.com/33edc35265.js"></script>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta charset="UTF-8">
+	<link href="css/styles.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<link href="css/content.css" rel="stylesheet" type="text/css" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Car-sale</title>
+	<link rel="stylesheet" href="./css/slider.css">
+	<link href="https://fonts.googleapis.com/css?family=Be+Vietnam&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/33edc35265.js"></script>
 </head>
+
 <body>
 	<%
 		ResourceBundle resourceBundle = ResourceBundle.getBundle("carsale.common.Content", request.getLocale());
@@ -64,8 +64,7 @@
 						<h3>
 							<a href="suv.jsp">VOIS</a>
 						</h3>
-						<a href="#">Vios 1.5E (MT)</a> <a href="#">Vios G(CVT)</a> <a
-							href="#">Vios 1.5E (CVT)</a>
+						<a href="#">Vios 1.5E (MT)</a> <a href="#">Vios G(CVT)</a> <a href="#">Vios 1.5E (CVT)</a>
 					</div>
 					<div class="column">
 						<h3>
@@ -83,12 +82,10 @@
 	</div>
 
 	<div class="w3-content w3-display-containner">
-		<img src="./img/slide/slide1.jpg" width="100%" height="350px"
-			class="slide" alt="#"> <img src="./img/slide/slide2.jpg"
-			width="100%" height="350px" class="slide" alt="#"> <img
-			src="./img/slide/slide3.jpg" width="100%" height="350px"
-			class="slide" alt="#"> <img src="./img/slide/slide4.jpg"
-			width="100%" height="350px" class="slide" alt="#">
+		<img src="./img/slide/slide1.jpg" width="100%" height="350px" class="slide" alt="#">
+		<img src="./img/slide/slide2.jpg" width="100%" height="350px" class="slide" alt="#"> <img
+			src="./img/slide/slide3.jpg" width="100%" height="350px" class="slide" alt="#">
+		<img src="./img/slide/slide4.jpg" width="100%" height="350px" class="slide" alt="#">
 	</div>
 	<div>
 		<script>
@@ -132,274 +129,18 @@
 			}
 		</script>
 	</div>
+	<!-- Content -->
 	<div class="main-content">
 		<div class="wrap">
 			<div class="main-box">
-				<div class="box_wrapper">
-					<h1 id="suv">SUV</h1>
-				</div>
-				<div class="section group">
-					<div class="col_1_of_4 span_1_of_4">
-						<img src="./img/car1.jpg" alt="" class="ima" />
-						<div class="grid_desc">
-							<p class="title">Fortuner 2.4G 4×2 AT</p>
-							<p class="title1">Lorem ipsum dolor sitconsectetueradipis</p>
-							<div class="price1" style="height: 19px;">
-								<span class="reducedfrom">$66.00</span> <span class="actual">$12.00</span>
-							</div>
-						</div>
-						<div class="Details">
-							<a href="single.html"
-								title="Lorem ipsum dolor sit amet, consect etuer" class="button"><%=resourceBundle.getString("chitiet")%><span></span>
-							</a>
-						</div>
-					</div>
-					<div class="col_1_of_4 span_1_of_4">
-						<img src="./img/car2.jpg" alt="" class="ima" />
-						<div class="grid_desc">
-							<p class="title">Toyota Rush 2018</p>
-							<p class="title1">Lorem ipsum dolor sitconsectetueradipis</p>
-							<div class="price1" style="height: 19px;">
-								<span class="reducedfrom">$66.00</span> <span class="actual">$12.00</span>
-							</div>
-						</div>
-						<div class="Details">
-							<a href="single.html"
-								title="Lorem ipsum dolor sit amet, consect etuer" class="button"><%=resourceBundle.getString("chitiet")%><span></span>
-							</a>
-						</div>
-					</div>
-					<div class="col_1_of_4 span_1_of_4">
-						<img src="./img/car3.jpg" alt="" class="ima" />
-						<div class="grid_desc">
-							<p class="title">Fortuner 2.7V 4×2</p>
-							<p class="title1">Lorem ipsum dolor sitconsectetueradipis</p>
-							<div class="price1" style="height: 19px;">
-								<span class="reducedfrom">$66.00</span> <span class="actual">$12.00</span>
-							</div>
-						</div>
-						<div class="Details">
-							<a href="single.html"
-								title="Lorem ipsum dolor sit amet, consect etuer" class="button"><%=resourceBundle.getString("chitiet")%><span></span>
-							</a>
-						</div>
-					</div>
-					<div class="col_1_of_4 span_1_of_4">
-						<img src="./img/car4.jpg" alt="" class="ima" />
-						<div class="grid_desc">
-							<p class="title">Fortuner 2.8V 4×4</p>
-							<p class="title1">Lorem ipsum dolor sitconsectetueradipis</p>
-							<div class="price1" style="height: 19px;">
-								<span class="reducedfrom">$66.00</span> <span class="actual">$12.00</span>
-							</div>
-						</div>
-						<div class="Details">
-							<a href="single.html"
-								title="Lorem ipsum dolor sit amet, consect etuer" class="button"><%=resourceBundle.getString("chitiet")%><span></span>
-							</a>
-						</div>
-					</div>
-					<div class="clear"></div>
-				</div>
-
-				<div class="box_wrapper">
-					<h1 id="vios">VIOS</h1>
-				</div>
-				<div class="section group">
-					<div class="col_1_of_4 span_1_of_4">
-						<img src="./img/car5.jpg" alt="" class="ima" />
-						<div class="grid_desc">
-							<p class="title">Vios 1.5E (MT)</p>
-							<p class="title1">Lorem ipsum dolor sitconsectetueradipis</p>
-							<div class="price1" style="height: 19px;">
-								<span class="reducedfrom">$66.00</span> <span class="actual">$12.00</span>
-							</div>
-						</div>
-						<div class="Details">
-							<a href="single.html"
-								title="Lorem ipsum dolor sit amet, consect etuer" class="button"><%=resourceBundle.getString("chitiet")%><span></span>
-							</a>
-						</div>
-					</div>
-					<div class="col_1_of_4 span_1_of_4">
-						<img src="./img/car6.jpg" alt="" class="ima" />
-						<div class="grid_desc">
-							<p class="title">Vios 1.5E (CVT)</p>
-							<p class="title1">Lorem ipsum dolor sitconsectetueradipis</p>
-							<div class="price1" style="height: 19px;">
-								<span class="reducedfrom">$66.00</span> <span class="actual">$12.00</span>
-							</div>
-						</div>
-						<div class="Details">
-							<a href="single.html"
-								title="Lorem ipsum dolor sit amet, consect etuer" class="button"><%=resourceBundle.getString("chitiet")%><span></span>
-							</a>
-						</div>
-					</div>
-					<div class="col_1_of_4 span_1_of_4">
-						<img src="./img/car7.jpg" alt="" class="ima" />
-						<div class="grid_desc">
-							<p class="title">Vios G(CVT)</p>
-							<p class="title1">Lorem ipsum dolor sitconsectetueradipis</p>
-							<div class="price1" style="height: 19px;">
-								<span class="reducedfrom">$66.00</span> <span class="actual">$12.00</span>
-							</div>
-						</div>
-						<div class="Details">
-							<a href="single.html"
-								title="Lorem ipsum dolor sit amet, consect etuer" class="button"><%=resourceBundle.getString("chitiet")%><span></span>
-							</a>
-						</div>
-					</div>
-					<div class="col_1_of_4 span_1_of_4">
-						<img src="./img/car8.jpg" alt="" class="ima" />
-						<div class="grid_desc">
-							<p class="title">Corolla Altis 2.0 Luxury</p>
-							<p class="title1">Lorem ipsum dolor sitconsectetueradipis</p>
-							<div class="price1" style="height: 19px;">
-								<span class="reducedfrom">$66.00</span> <span class="actual">$12.00</span>
-							</div>
-						</div>
-						<div class="Details">
-							<a href="single.html"
-								title="Lorem ipsum dolor sit amet, consect etuer" class="button"><%=resourceBundle.getString("chitiet")%><span></span>
-							</a>
-						</div>
-					</div>
-					<div class="clear"></div>
-				</div>
-				<div class="box_wrapper">
-					<h1 id="vios">SEDAN</h1>
-				</div>
-				<div class="section group">
-					<div class="col_1_of_4 span_1_of_4">
-						<img src="./img/car5.jpg" alt="" class="ima" />
-						<div class="grid_desc">
-							<p class="title">Vios 1.5E (MT)</p>
-							<p class="title1">Lorem ipsum dolor sitconsectetueradipis</p>
-							<div class="price1" style="height: 19px;">
-								<span class="reducedfrom">$66.00</span> <span class="actual">$12.00</span>
-							</div>
-						</div>
-						<div class="Details">
-							<a href="single.html"
-								title="Lorem ipsum dolor sit amet, consect etuer" class="button"><%=resourceBundle.getString("chitiet")%><span></span>
-							</a>
-						</div>
-					</div>
-					<div class="col_1_of_4 span_1_of_4">
-						<img src="./img/car6.jpg" alt="" class="ima" />
-						<div class="grid_desc">
-							<p class="title">Vios 1.5E (CVT)</p>
-							<p class="title1">Lorem ipsum dolor sitconsectetueradipis</p>
-							<div class="price1" style="height: 19px;">
-								<span class="reducedfrom">$66.00</span> <span class="actual">$12.00</span>
-							</div>
-						</div>
-						<div class="Details">
-							<a href="single.html"
-								title="Lorem ipsum dolor sit amet, consect etuer" class="button"><%=resourceBundle.getString("chitiet")%><span></span>
-							</a>
-						</div>
-					</div>
-					<div class="col_1_of_4 span_1_of_4">
-						<img src="./img/car7.jpg" alt="" class="ima" />
-						<div class="grid_desc">
-							<p class="title">Vios G(CVT)</p>
-							<p class="title1">Lorem ipsum dolor sitconsectetueradipis</p>
-							<div class="price1" style="height: 19px;">
-								<span class="reducedfrom">$66.00</span> <span class="actual">$12.00</span>
-							</div>
-						</div>
-						<div class="Details">
-							<a href="single.html"
-								title="Lorem ipsum dolor sit amet, consect etuer" class="button"><%=resourceBundle.getString("chitiet")%><span></span>
-							</a>
-						</div>
-					</div>
-					<div class="col_1_of_4 span_1_of_4">
-						<img src="./img/car8.jpg" alt="" class="ima" />
-						<div class="grid_desc">
-							<p class="title">Corolla Altis 2.0 Luxury</p>
-							<p class="title1">Lorem ipsum dolor sitconsectetueradipis</p>
-							<div class="price1" style="height: 19px;">
-								<span class="reducedfrom">$66.00</span> <span class="actual">$12.00</span>
-							</div>
-						</div>
-						<div class="Details">
-							<a href="single.html"
-								title="Lorem ipsum dolor sit amet, consect etuer" class="button"><%=resourceBundle.getString("chitiet")%><span></span>
-							</a>
-						</div>
-					</div>
-					<div class="clear"></div>
-				</div>
-				<div class="box_wrapper">
-					<h1 id="bantai"><%=resourceBundle.getString("xebantai")%></h1>
-				</div>
-				<div class="section group">
-					<div class="col_1_of_4 span_1_of_4">
-						<img src="./img/car5.jpg" alt="" class="ima" />
-						<div class="grid_desc">
-							<p class="title">Vios 1.5E (MT)</p>
-							<p class="title1">Lorem ipsum dolor sitconsectetueradipis</p>
-							<div class="price1" style="height: 19px;">
-								<span class="reducedfrom">$66.00</span> <span class="actual">$12.00</span>
-							</div>
-						</div>
-						<div class="Details">
-							<a href="single.html"
-								title="Lorem ipsum dolor sit amet, consect etuer" class="button"><%=resourceBundle.getString("chitiet")%><span></span>
-							</a>
-						</div>
-					</div>
-					<div class="col_1_of_4 span_1_of_4">
-						<img src="./img/car6.jpg" alt="" class="ima" />
-						<div class="grid_desc">
-							<p class="title">Vios 1.5E (CVT)</p>
-							<p class="title1">Lorem ipsum dolor sitconsectetueradipis</p>
-							<div class="price1" style="height: 19px;">
-								<span class="reducedfrom">$66.00</span> <span class="actual">$12.00</span>
-							</div>
-						</div>
-						<div class="Details">
-							<a href="single.html"
-								title="Lorem ipsum dolor sit amet, consect etuer" class="button"><%=resourceBundle.getString("chitiet")%><span></span>
-							</a>
-						</div>
-					</div>
-					<div class="col_1_of_4 span_1_of_4">
-						<img src="./img/car7.jpg" alt="" class="ima" />
-						<div class="grid_desc">
-							<p class="title">Vios G(CVT)</p>
-							<p class="title1">Lorem ipsum dolor sitconsectetueradipis</p>
-							<div class="price1" style="height: 19px;">
-								<span class="reducedfrom">$66.00</span> <span class="actual">$12.00</span>
-							</div>
-						</div>
-						<div class="Details">
-							<a href="single.html"
-								title="Lorem ipsum dolor sit amet, consect etuer" class="button"><%=resourceBundle.getString("chitiet")%><span></span>
-							</a>
-						</div>
-					</div>
-					<div class="col_1_of_4 span_1_of_4">
-						<img src="./img/car8.jpg" alt="" class="ima" />
-						<div class="grid_desc">
-							<p class="title">Corolla Altis 2.0 Luxury</p>
-							<p class="title1">Lorem ipsum dolor sitconsectetueradipis</p>
-							<div class="price1" style="height: 19px;">
-								<span class="reducedfrom">$66.00</span> <span class="actual">$12.00</span>
-							</div>
-						</div>
-						<div class="Details">
-							<a href="single.html"
-								title="Lorem ipsum dolor sit amet, consect etuer" class="button"><%=resourceBundle.getString("chitiet")%><span></span>
-							</a>
-						</div>
-					</div>
-					<div class="clear"></div>
-				</div>
+				<!-- List Suv -->
+				<div id="listSuv"></div>
+				<!-- List Da Dung -->
+				<div id="listDaDung"></div>
+				<!-- List Sedan -->
+				<div id="listSedan"></div>
+				<!-- List Ban Tai -->
+				<div id="listBanTai"></div>
 			</div>
 		</div>
 	</div>
@@ -430,24 +171,18 @@
 			<div class="footer-grid right-grid">
 				<h3><%=resourceBundle.getString("contactinfo")%></h3>
 				<ul class="follow_icon">
-					<li><a href="#" style="opacity: 1;"> <img
-							src="images/follow_icon.png" alt="">
-					</a></li>
-					<li><a href="#" style="opacity: 1;"> <img
-							src="img/follow_icon1.png" alt="">
-					</a></li>
-					<li><a href="#" style="opacity: 1;"> <img
-							src="img/follow_icon2.png" alt="">
-					</a></li>
-					<li><a href="#" style="opacity: 1;"> <img
-							src="img/follow_icon3.png" alt="">
-					</a></li>
-					<li><a href="#" style="opacity: 1;"> <img
-							src="img/follow_icon4.png" alt="">
-					</a></li>
-					<li><a href="#" style="opacity: 1;"> <img
-							src="img/follow_icon5.png" alt="">
-					</a></li>
+					<li><a href="#" style="opacity: 1;"> <img src="images/follow_icon.png" alt="">
+						</a></li>
+					<li><a href="#" style="opacity: 1;"> <img src="img/follow_icon1.png" alt="">
+						</a></li>
+					<li><a href="#" style="opacity: 1;"> <img src="img/follow_icon2.png" alt="">
+						</a></li>
+					<li><a href="#" style="opacity: 1;"> <img src="img/follow_icon3.png" alt="">
+						</a></li>
+					<li><a href="#" style="opacity: 1;"> <img src="img/follow_icon4.png" alt="">
+						</a></li>
+					<li><a href="#" style="opacity: 1;"> <img src="img/follow_icon5.png" alt="">
+						</a></li>
 				</ul>
 				<p><%=resourceBundle.getString("gopyxingoi")%>: 03456789
 				</p>
@@ -475,5 +210,74 @@
 			}
 		}
 	</script>
+	<script type="text/javascript">
+		test();
+		function test() {
+			var t = $.ajax({
+				url: "http://localhost:8080/CarSale/api/trang-chu",
+				type: "GET",
+				dataType: "json",
+				contentType: "application/json; charset=utf-8"
+			});
+			t.done(function (result) {
+				console.log(result);
+				//Show list car SUV
+				var carSuv = findCarByCategory("SUV", result);
+				var suv = content(carSuv);
+				$("#listSuv").append(suv);
+				//Show List Da Dung
+				var carDaDung = findCarByCategory("ĐA DỤNG", result);
+				var daDung = content(carDaDung);
+				$("#listDaDung").append(daDung);
+				//Show List car Sedan
+				var carSedan = findCarByCategory("SEDAN", result);
+				var sedan = content(carSedan);
+				$("#listSedan").append(sedan);
+				//Show List Ban Tai
+				var carBanTai = findCarByCategory("BÁN TẢI", result);
+				var banTai = content(carBanTai);
+				$("#listBanTai").append(banTai);
+
+			});
+		}
+		function findCarByCategory(key, result) {
+			let car = result.filter(result => {
+				return result.carCategory === key;
+			});
+			return car;
+		}
+		function content(array) {
+			var content = '';
+			content += '<div class="box_wrapper">' +
+				'<h1 id="suv">' + array[0].carCategory + '</h1>' +
+				'</div>' +
+				'<div class="section group">';
+			for (let i = 0; i < 4; i++) {
+				content += '<div class="col_1_of_4 span_1_of_4">' +
+					'<img src="' + array[i].listImage[0].imageUrl + '" alt="" class="ima" />' +
+					'<div class="grid_desc">' +
+					'<p class="title">' + array[i].carName + "</p>" +
+					'<p class="title1">' + array[i].carDes + '</p>' +
+					'<div class="price1" style="height: 19px;">' +
+					'<span class="reducedfrom">' + array[i].carPrice + '</span>' +
+					'</div>' +
+					'</div>' +
+					'<div class="Details">' +
+					'<a' +
+					' href="single.html"' +
+					'title="Lorem ipsum dolor sit amet, consect etuer"' +
+					'class="button">' +
+					'<%=resourceBundle.getString("chitiet")%>' +
+					'</a>' +
+					'</div>' +
+					'</div>';
+			}
+
+			content += '<div class="clear"></div>' +
+				'</div>';
+			return content;
+		}
+	</script>
 </body>
+
 </html>

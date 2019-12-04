@@ -1,5 +1,5 @@
 
-package carsale.serviceImpl;
+package carsale.service.Impl;
 
 import java.util.ArrayList;
 
@@ -7,8 +7,13 @@ import carsale.dao.impl.CarDaoImpl;
 import carsale.model.Car;
 import carsale.service.CarService;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class CarServiceImpl.
+ */
 public class CarServiceImpl implements CarService {
 
+  /** The cardao. */
   private CarDaoImpl cardao = new CarDaoImpl();
 
   /**
@@ -77,11 +82,12 @@ public class CarServiceImpl implements CarService {
 
   /**
    * {@inheritDoc}
+   * 
    * @see carsale.service.CarService#getListPrice()
    */
   @Override
   public ArrayList<Car> getListPrice() {
-   return (ArrayList<Car>) cardao.getListCarPrice();
+    return (ArrayList<Car>) cardao.getListCarPrice();
   }
 
 }

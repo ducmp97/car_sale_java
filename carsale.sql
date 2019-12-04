@@ -11,54 +11,55 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
--- Dumping structure for table carsalel.car
+-- Dumping structure for table carsale.car
 CREATE TABLE IF NOT EXISTS `car` (
   `car_id` int(11) NOT NULL AUTO_INCREMENT,
   `car_name` varchar(50) NOT NULL,
   `category` varchar(50) NOT NULL,
+  `type` varchar(50) NOT NULL,
   `des` varchar(500) NOT NULL,
   `price` double NOT NULL,
   PRIMARY KEY (`car_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
 
--- Dumping data for table carsalel.car: ~32 rows (approximately)
+-- Dumping data for table carsale.car: ~32 rows (approximately)
 /*!40000 ALTER TABLE `car` DISABLE KEYS */;
-INSERT INTO `car` (`car_id`, `car_name`, `category`, `des`, `price`) VALUES
-	(1, 'Vios 1.5E (MT)', 'SEDAN, Toyota Vios', 'Toyota Innova Vios 1.5E Xe Đủ Màu, Giao Luôn   - Ưu đãi cực lớn cho các dòng xe Vios', 531000000),
-	(2, 'Vios 1.5E (CVT)', 'SEDAN, Toyota Vios', 'Toyota Innova Vios 1.5E CVT Xe Đủ Màu, Giao Luôn   - Ưu đãi cực lớn cho các dòng xe Vios', 569000000),
-	(3, 'Vios G(CVT)', 'SEDAN, Toyota Vios', '• Số chỗ ngồi : 5 chỗ  • Kiểu dáng : Sedan  • Nhiên liệu : Xăng  • Xuất xứ : Xe trong nước  • Thông tin khác:  + Số tự động vô cấp + Động cơ xăng dung tích 1.496 cm3 Hotline đặt hàng: 0973.631.248', 606000000),
-	(4, 'Fortuner 2.4G 4×2 AT', 'SUV, Toyota Fortun', 'Toyota Fortuner 2.4G (4x2) Khuyến Mãi Lớn, Xe Đủ Màu, Giao Luôn   - CD, ghế nỉ, 1 cầu số tự động máy dầu, động cơ thế hệ mới', 1094000000),
-	(5, 'Toyota Wigo 1.2 MT', 'HATCHBACK, Toyota Wigo', 'Toyota Wigo- Giao Cực Sớm Với Nhiều Quà Tặng Hấp Dẫn ', 345000000),
-	(6, 'Toyota Wigo 1.2 AT', 'HATCHBACK, Toyota Wigo', 'Toyota Wigo- Giao Cực Sớm Với Nhiều Quà Tặng Hấp Dẫn ', 405000000),
-	(7, 'Toyota Rush 2018', 'SUV, Toyota Rush', 'Toyota Rush- Giao Cực Sớm Với Nhiều Quà Tặng Hấp Dẫn ', 668000000),
-	(8, 'Toyota Avanza 1.5AT', 'ĐA DỤNG, Toyota Avanza', 'Toyota Avanza- Giao Cực Sớm Với Nhiều Quà Tặng Hấp Dẫn ', 593000000),
-	(9, 'Toyota Avanza 1.3MT', 'ĐA DỤNG, Toyota Avanza', 'Toyota Avanza- Giao Cực Sớm Với Nhiều Quà Tặng Hấp Dẫn ', 537000000),
-	(10, 'Fortuner 2.7V 4×2', 'SUV, Toyota Fortuner', 'Toyota Fortuner 2.7V (4x2) Khuyến Mãi Lớn, Xe Đủ Màu, Giao Luôn   - DVD, khởi động start/stop, ghế da, 1 cầu số tự động máy xăng', 1150000000),
-	(11, 'Fortuner 2.8V 4×4', 'SUV, Toyota Fortuner', 'Toyota Fortuner 2.7V (4x4) Khuyến Mãi Lớn, Xe Đủ Màu, Giao Luôn   - DVD, khởi động start/stop, ghế da, 2 cầu số tự động máy xăng - Bộ quà tặng hấp dẫn', 1350000000),
-	(12, 'Hilux 2.4G 4x4MT', 'BÁN TẢI, Toyota Hilux', 'Toyota Hilux 2.4G 4x4MT Khuyến Mãi Lớn, Xe Đủ Màu, Giao Luôn   - CD, ghế nỉ, 2 cầu số sàn máy dầu, động cơ thế hệ mới', 793000000),
-	(13, 'Hilux 2.4E 4×2 AT', 'BÁN TẢI, Toyota Hilux', 'Toyota Hilux 2.4G 4x4MT Khuyến Mãi Lớn, Xe Đủ Màu, Giao Luôn   - CD, ghế nỉ, 2 cầu số sàn máy dầu, động cơ thế hệ mới', 695000000),
-	(14, 'Hilux 2.8G 4×4 AT', 'BÁN TẢI, Toyota Hilux', 'Toyota Hilux 2.4G 4x4MT Khuyến Mãi Lớn, Xe Đủ Màu, Giao Luôn   - CD, ghế nỉ, 2 cầu số sàn máy dầu, động cơ thế hệ mới', 878000000),
-	(15, 'Yaris G CVT', 'HATCHBACK, Toyota Yaris', 'Toyota Yairs 1.5G  Xe Đủ Màu, Giao Luôn   - DCD, ghế da, số tự động, khởi động nút bấm', 650000000),
-	(16, 'Toyota Alphard', 'ĐA DỤNG, Toyota Alphard Luxyry', 'Toyota Alphard Giao Sớm  - Trải nghiệm Alphard. Trải nghiệm Đẳng cấp thương gia - Tiện nghi hạng nhất', 4038000000),
-	(17, 'Corolla Altis 2.0 Luxury', 'SEDAN, Toyota Corola Altis', 'Toyota Corolla Altis 2.0 Luxury  Xe Đủ Màu, Giao Luôn   - Giảm giá tiền mặt cực lớn cho các dòng xe Altis', 864000000),
-	(18, 'Corolla Altis 1.8G (CVT)', 'SEDAN, Toyota Corola Altis', 'Toyota Corolla Altis 1.8G Xe Đủ Màu, Giao Luôn   - Giảm giá tiền mặt cực lớn cho các dòng xe Altis', 791000000),
-	(19, 'Corolla Altis 2.0V Sport', 'SEDAN, Toyota Corola Altis', 'Toyota Corolla Altis 2.0V Sport Xe Đủ Màu, Giao Luôn   - Giảm giá tiền mặt cực lớn cho các dòng xe Altis', 90500000),
-	(20, 'Corolla Altis 1.8E (CVT)', 'SEDAN, Toyota Corola Altis', 'Toyota Corolla Altis 1.8E Xe Đủ Màu, Giao Luôn   - Giảm giá tiền mặt cực lớn cho các dòng xe Altis', 733000000),
-	(21, 'Corolla Altis 1.8E (MT)', 'SEDAN, Toyota Corola Altis', 'Toyota Corolla Altis 1.8E MT  Xe Đủ Màu, Giao Luôn   - Giảm giá tiền mặt cực lớn cho các dòng xe Altis', 678000000),
-	(22, 'Innova 2.0V', 'ĐA DỤNG, Toyota Innova', 'Toyota Innova 2.0V Xe Đủ Màu, Giao Luôn   - Giảm giá tiền mặt cực lớn cho các dòng xe Innova', 971000000),
-	(23, 'Innova Venturer', 'ĐA DỤNG, Toyota Innova', 'Toyota Innova Venturer Xe Đủ Màu, Giao Luôn   - Giảm giá tiền mặt cực lớn cho các dòng xe Innova', 878000000),
-	(24, 'Innova 2.0G', 'ĐA DỤNG, Toyota Innova', 'Toyota Innova G Xe Đủ Màu, Giao Luôn   - Giảm giá tiền mặt cực lớn cho các dòng xe Innova', 847000000),
-	(25, 'Innova 2.0E', 'ĐA DỤNG, Toyota Innova', 'Toyota Innova E Xe Đủ Màu, Giao Luôn   - Giảm giá tiền mặt cực lớn cho các dòng xe Innova', 771000000),
-	(26, 'Camry 2.5Q', 'SEDAN, Toyota Camry', 'Toyota Innova Camry 2.5Q Xe Đủ Màu, Giao Luôn   - Giảm giá tiền mặt cực lớn cho các dòng xe Camry', 1302000000),
-	(27, 'Camry 2.5G', 'SEDAN, Toyota Camry', 'Toyota Innova Camry 2.5G Xe Đủ Màu, Giao Luôn   - Giảm giá tiền mặt cực lớn cho các dòng xe Camry', 1106000000),
-	(28, 'Camry 2.0E', 'SEDAN, Toyota Camry', 'Toyota Innova Camry 2.5G Xe Đủ Màu, Giao Luôn   - Giảm giá tiền mặt cực lớn cho các dòng xe Camry', 997000000),
-	(29, 'Vios 1.5G (CVT)', 'SEDAN, Toyota Vios', 'Toyota Innova Vios 1.5G Xe Đủ Màu, Giao Luôn   - Ưu đãi cực lớn cho các dòng xe Vios', 606000000),
-	(30, 'Hiace Động cơ dầu', 'THƯƠNG MẠI, Toyota Hiace', 'Toyota Hiace- Giao Luôn Với Nhiều Quà Tặng Khuyến Mại Hấp Dẫn ', 999000000),
-	(31, 'Land Cruiser VX', 'SUV, Toyota Land Cruiser', 'Toyota Land Cruiser VX Phiên Bản Mới Nhất Xe Đủ Màu, Giao Sớm ', 3650000000),
-	(32, 'Land Cruiser Prado VX', 'SUV, Toyota Land Cruiser', 'Toyota Prado VX Phiên Bản Mới Nhất Xe Đủ Màu, Giao Sớm    ', 2340000000);
+INSERT INTO `car` (`car_id`, `car_name`, `category`, `type`, `des`, `price`) VALUES
+	(1, 'Vios 1.5E (MT)', 'SEDAN', 'Toyota Vios', 'Toyota Innova Vios 1.5E Xe Đủ Màu, Giao Luôn   - Ưu đãi cực lớn cho các dòng xe Vios', 531000000),
+	(2, 'Vios 1.5E (CVT)', 'SEDAN', 'Toyota Vios', 'Toyota Innova Vios 1.5E CVT Xe Đủ Màu, Giao Luôn   - Ưu đãi cực lớn cho các dòng xe Vios', 569000000),
+	(3, 'Vios G(CVT)', 'SEDAN', 'Toyota Vios', '• Số chỗ ngồi : 5 chỗ  • Kiểu dáng : Sedan  • Nhiên liệu : Xăng  • Xuất xứ : Xe trong nước  • Thông tin khác:  + Số tự động vô cấp + Động cơ xăng dung tích 1.496 cm3 Hotline đặt hàng: 0973.631.248', 606000000),
+	(4, 'Fortuner 2.4G 4×2 AT', 'SUV', 'Toyota Fortun', 'Toyota Fortuner 2.4G (4x2) Khuyến Mãi Lớn, Xe Đủ Màu, Giao Luôn   - CD, ghế nỉ, 1 cầu số tự động máy dầu, động cơ thế hệ mới', 1094000000),
+	(5, 'Toyota Wigo 1.2 MT', 'HATCHBACK', 'Toyota Wigo', 'Toyota Wigo- Giao Cực Sớm Với Nhiều Quà Tặng Hấp Dẫn ', 345000000),
+	(6, 'Toyota Wigo 1.2 AT', 'HATCHBACK', 'Toyota Wigo', 'Toyota Wigo- Giao Cực Sớm Với Nhiều Quà Tặng Hấp Dẫn ', 405000000),
+	(7, 'Toyota Rush 2018', 'SUV', 'Toyota Rush', 'Toyota Rush- Giao Cực Sớm Với Nhiều Quà Tặng Hấp Dẫn ', 668000000),
+	(8, 'Toyota Avanza 1.5AT', 'ĐA DỤNG', 'Toyota Avanza', 'Toyota Avanza- Giao Cực Sớm Với Nhiều Quà Tặng Hấp Dẫn ', 593000000),
+	(9, 'Toyota Avanza 1.3MT', 'ĐA DỤNG', 'Toyota Avanza', 'Toyota Avanza- Giao Cực Sớm Với Nhiều Quà Tặng Hấp Dẫn ', 537000000),
+	(10, 'Fortuner 2.7V 4×2', 'SUV', 'Toyota Fortuner', 'Toyota Fortuner 2.7V (4x2) Khuyến Mãi Lớn, Xe Đủ Màu, Giao Luôn   - DVD, khởi động start/stop, ghế da, 1 cầu số tự động máy xăng', 1150000000),
+	(11, 'Fortuner 2.8V 4×4', 'SUV', 'Toyota Fortuner', 'Toyota Fortuner 2.7V (4x4) Khuyến Mãi Lớn, Xe Đủ Màu, Giao Luôn   - DVD, khởi động start/stop, ghế da, 2 cầu số tự động máy xăng - Bộ quà tặng hấp dẫn', 1350000000),
+	(12, 'Hilux 2.4G 4x4MT', 'BÁN TẢI', 'Toyota Hilux', 'Toyota Hilux 2.4G 4x4MT Khuyến Mãi Lớn, Xe Đủ Màu, Giao Luôn   - CD, ghế nỉ, 2 cầu số sàn máy dầu, động cơ thế hệ mới', 793000000),
+	(13, 'Hilux 2.4E 4×2 AT', 'BÁN TẢI', 'Toyota Hilux', 'Toyota Hilux 2.4G 4x4MT Khuyến Mãi Lớn, Xe Đủ Màu, Giao Luôn   - CD, ghế nỉ, 2 cầu số sàn máy dầu, động cơ thế hệ mới', 695000000),
+	(14, 'Hilux 2.8G 4×4 AT', 'BÁN TẢI', 'Toyota Hilux', 'Toyota Hilux 2.4G 4x4MT Khuyến Mãi Lớn, Xe Đủ Màu, Giao Luôn   - CD, ghế nỉ, 2 cầu số sàn máy dầu, động cơ thế hệ mới', 878000000),
+	(15, 'Yaris G CVT', 'HATCHBACK', 'Toyota Yaris', 'Toyota Yairs 1.5G  Xe Đủ Màu, Giao Luôn   - DCD, ghế da, số tự động, khởi động nút bấm', 650000000),
+	(16, 'Toyota Alphard', 'ĐA DỤNG', 'Toyota Alphard Luxyry', 'Toyota Alphard Giao Sớm  - Trải nghiệm Alphard. Trải nghiệm Đẳng cấp thương gia - Tiện nghi hạng nhất', 4038000000),
+	(17, 'Corolla Altis 2.0 Luxury', 'SEDAN', 'Toyota Corola Altis', 'Toyota Corolla Altis 2.0 Luxury  Xe Đủ Màu, Giao Luôn   - Giảm giá tiền mặt cực lớn cho các dòng xe Altis', 864000000),
+	(18, 'Corolla Altis 1.8G (CVT)', 'SEDAN', 'Toyota Corola Altis', 'Toyota Corolla Altis 1.8G Xe Đủ Màu, Giao Luôn   - Giảm giá tiền mặt cực lớn cho các dòng xe Altis', 791000000),
+	(19, 'Corolla Altis 2.0V Sport', 'SEDAN', 'Toyota Corola Altis', 'Toyota Corolla Altis 2.0V Sport Xe Đủ Màu, Giao Luôn   - Giảm giá tiền mặt cực lớn cho các dòng xe Altis', 90500000),
+	(20, 'Corolla Altis 1.8E (CVT)', 'SEDAN', 'Toyota Corola Altis', 'Toyota Corolla Altis 1.8E Xe Đủ Màu, Giao Luôn   - Giảm giá tiền mặt cực lớn cho các dòng xe Altis', 733000000),
+	(21, 'Corolla Altis 1.8E (MT)', 'SEDAN', 'Toyota Corola Altis', 'Toyota Corolla Altis 1.8E MT  Xe Đủ Màu, Giao Luôn   - Giảm giá tiền mặt cực lớn cho các dòng xe Altis', 678000000),
+	(22, 'Innova 2.0V', 'ĐA DỤNG', 'Toyota Innova', 'Toyota Innova 2.0V Xe Đủ Màu, Giao Luôn   - Giảm giá tiền mặt cực lớn cho các dòng xe Innova', 971000000),
+	(23, 'Innova Venturer', 'ĐA DỤNG', 'Toyota Innova', 'Toyota Innova Venturer Xe Đủ Màu, Giao Luôn   - Giảm giá tiền mặt cực lớn cho các dòng xe Innova', 878000000),
+	(24, 'Innova 2.0G', 'ĐA DỤNG', 'Toyota Innova', 'Toyota Innova G Xe Đủ Màu, Giao Luôn   - Giảm giá tiền mặt cực lớn cho các dòng xe Innova', 847000000),
+	(25, 'Innova 2.0E', 'ĐA DỤNG', 'Toyota Innova', 'Toyota Innova E Xe Đủ Màu, Giao Luôn   - Giảm giá tiền mặt cực lớn cho các dòng xe Innova', 771000000),
+	(26, 'Camry 2.5Q', 'SEDAN', 'Toyota Camry', 'Toyota Innova Camry 2.5Q Xe Đủ Màu, Giao Luôn   - Giảm giá tiền mặt cực lớn cho các dòng xe Camry', 1302000000),
+	(27, 'Camry 2.5G', 'SEDAN', 'Toyota Camry', 'Toyota Innova Camry 2.5G Xe Đủ Màu, Giao Luôn   - Giảm giá tiền mặt cực lớn cho các dòng xe Camry', 1106000000),
+	(28, 'Camry 2.0E', 'SEDAN', 'Toyota Camry', 'Toyota Innova Camry 2.5G Xe Đủ Màu, Giao Luôn   - Giảm giá tiền mặt cực lớn cho các dòng xe Camry', 997000000),
+	(29, 'Vios 1.5G (CVT)', 'SEDAN', 'Toyota Vios', 'Toyota Innova Vios 1.5G Xe Đủ Màu, Giao Luôn   - Ưu đãi cực lớn cho các dòng xe Vios', 606000000),
+	(30, 'Hiace Động cơ dầu', 'BÁN TẢI', 'Toyota Hiace', 'Toyota Hiace- Giao Luôn Với Nhiều Quà Tặng Khuyến Mại Hấp Dẫn ', 999000000),
+	(31, 'Land Cruiser VX', 'SUV', 'Toyota Land Cruiser', 'Toyota Land Cruiser VX Phiên Bản Mới Nhất Xe Đủ Màu, Giao Sớm ', 3650000000),
+	(32, 'Land Cruiser Prado VX', 'SUV', 'Toyota Land Cruiser', 'Toyota Prado VX Phiên Bản Mới Nhất Xe Đủ Màu, Giao Sớm    ', 2340000000);
 /*!40000 ALTER TABLE `car` ENABLE KEYS */;
 
--- Dumping structure for table carsalel.city_fee
+-- Dumping structure for table carsale.city_fee
 CREATE TABLE IF NOT EXISTS `city_fee` (
   `city_fee_id` int(11) NOT NULL AUTO_INCREMENT,
   `city_name` varchar(50) NOT NULL,
@@ -66,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `city_fee` (
   PRIMARY KEY (`city_fee_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Dumping data for table carsalel.city_fee: ~3 rows (approximately)
+-- Dumping data for table carsale.city_fee: ~3 rows (approximately)
 /*!40000 ALTER TABLE `city_fee` DISABLE KEYS */;
 INSERT INTO `city_fee` (`city_fee_id`, `city_name`, `tax`) VALUES
 	(1, 'Hà Nội', 0.12),
@@ -74,7 +75,7 @@ INSERT INTO `city_fee` (`city_fee_id`, `city_name`, `tax`) VALUES
 	(3, 'Thành phố khác', 0.1);
 /*!40000 ALTER TABLE `city_fee` ENABLE KEYS */;
 
--- Dumping structure for table carsalel.comment
+-- Dumping structure for table carsale.comment
 CREATE TABLE IF NOT EXISTS `comment` (
   `comment_id` int(11) NOT NULL AUTO_INCREMENT,
   `content` varchar(2000) NOT NULL,
@@ -88,11 +89,11 @@ CREATE TABLE IF NOT EXISTS `comment` (
   CONSTRAINT `comment_ibfk_2` FOREIGN KEY (`post_id`) REFERENCES `post` (`post_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table carsalel.comment: ~0 rows (approximately)
+-- Dumping data for table carsale.comment: ~0 rows (approximately)
 /*!40000 ALTER TABLE `comment` DISABLE KEYS */;
 /*!40000 ALTER TABLE `comment` ENABLE KEYS */;
 
--- Dumping structure for table carsalel.description
+-- Dumping structure for table carsale.description
 CREATE TABLE IF NOT EXISTS `description` (
   `des_id` int(11) NOT NULL AUTO_INCREMENT,
   `content` varchar(2000) NOT NULL,
@@ -104,7 +105,7 @@ CREATE TABLE IF NOT EXISTS `description` (
   CONSTRAINT `description_ibfk_1` FOREIGN KEY (`car_id`) REFERENCES `car` (`car_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8;
 
--- Dumping data for table carsalel.description: ~50 rows (approximately)
+-- Dumping data for table carsale.description: ~50 rows (approximately)
 /*!40000 ALTER TABLE `description` DISABLE KEYS */;
 INSERT INTO `description` (`des_id`, `content`, `type_des`, `des_img`, `car_id`) VALUES
 	(1, 'Cụm đèn trước xe  được trang bị đèn halogen phản xạ đa chiều trên nền mạ kim loại sáng bóng, đảm bảo hiệu quả chiếu sáng tối ưu khi di chuyển trên đường.', 'ngoại thất', 'image/oxncrh.jpg', 1),
@@ -159,7 +160,7 @@ INSERT INTO `description` (`des_id`, `content`, `type_des`, `des_img`, `car_id`)
 	(50, 'Động cơ mới được trang bị hệ thống Dual VVT-i giúp tiết kiệm nhiên liệu, vận hành êm ái, thân thiện với môi trường', 'vận hành', 'image/wsdem3.png', 5);
 /*!40000 ALTER TABLE `description` ENABLE KEYS */;
 
--- Dumping structure for table carsalel.image
+-- Dumping structure for table carsale.image
 CREATE TABLE IF NOT EXISTS `image` (
   `image_id` int(11) NOT NULL AUTO_INCREMENT,
   `url` varchar(100) NOT NULL,
@@ -170,7 +171,7 @@ CREATE TABLE IF NOT EXISTS `image` (
   CONSTRAINT `image_ibfk_1` FOREIGN KEY (`car_id`) REFERENCES `car` (`car_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8;
 
--- Dumping data for table carsalel.image: ~54 rows (approximately)
+-- Dumping data for table carsale.image: ~54 rows (approximately)
 /*!40000 ALTER TABLE `image` DISABLE KEYS */;
 INSERT INTO `image` (`image_id`, `url`, `type_image`, `car_id`) VALUES
 	(1, 'image/113201443326PM-vios_2.jpg', 'car', 1),
@@ -229,7 +230,7 @@ INSERT INTO `image` (`image_id`, `url`, `type_image`, `car_id`) VALUES
 	(54, 'image/wsdem3.png', 'vận hành', 21);
 /*!40000 ALTER TABLE `image` ENABLE KEYS */;
 
--- Dumping structure for table carsalel.post
+-- Dumping structure for table carsale.post
 CREATE TABLE IF NOT EXISTS `post` (
   `post_id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(200) NOT NULL,
@@ -244,7 +245,7 @@ CREATE TABLE IF NOT EXISTS `post` (
   CONSTRAINT `post_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
--- Dumping data for table carsalel.post: ~12 rows (approximately)
+-- Dumping data for table carsale.post: ~12 rows (approximately)
 /*!40000 ALTER TABLE `post` DISABLE KEYS */;
 INSERT INTO `post` (`post_id`, `title`, `content`, `des`, `time_update`, `post_url`, `type_post`, `user_id`) VALUES
 	(1, 'TOYOTA TRIỂN KHAI CHƯƠNG TRÌNH ƯU ĐÃI DÀNH CHO KHÁCH HÀNG MUA XE COROLLA ALTIS, FORTUNER VÀ INNOVA', 'Chương trình ưu đãi dành cho khách hàng thanh toán đầy đủ khi mua xe Corolla Altis từ ngày 03/9/2019 đến 30/9/2019 và Fortuner, Innova từ ngày 03/9/2019 đến 31/10/2019 tại hệ thống đại lý Toyota trên toàn quốc.Fortuner & Innova là hai mẫu xe thường xuyên nằm trong danh sách xe bán chạy trên thị trường Việt Nam. Bên cạnh khách hàng cá nhân, gia đình, hai mẫu xe cũng được giới kinh doanh dịch vụ ưa chuộng. Có được thành công đó là nhờ việc kế thừa các giá trị cốt lõi tạo nên thành công của Toyota bao gồm chất lượng, độ bền và độ tin cậy cùng với chi phí vận hành, mức tiêu hao nhiên liệu thấp, phụ tùng sẵn có dễ thay thế cùng dịch vụ chất lượng cao và chuyên nghiệp với hệ thống 59 đại lý trải dài khắp 27 tỉnh thành trên cả nước và giá trị bán lại cao.', 'Chương trình ưu đãi dành cho khách hàng thanh toán đầy đủ khi mua xe Corolla Altis từ ngày 03/9/2019 đến 30/9/2019 và Fortuner, Innova từ ngày 03/9/2019 đến 31/10/2019 tại hệ thống đại lý Toyota trên toàn quốc. Hà Nội, ngày 03/9/2019 – Công ty Ô tô Toyota Việt Nam (TMV) cùng hệ thống đại lý Toyota trên toàn quốc thực hiện […]', '2019-09-14', 'image/FB-3a-1.jpg', 'tin tức', 1),
@@ -261,7 +262,7 @@ INSERT INTO `post` (`post_id`, `title`, `content`, `des`, `time_update`, `post_u
 	(12, 'CHÍNH SÁCH BẢO HÀNH', 'Tự hào là doanh nghiệp đứng vị trí dẫn đầu trên thị trường về dịch vụ sau bán hàng trong nhiều năm liên tiếp và được khách hàng đánh giá cao.\r\n\r\nA. Những gì được bảo hành\r\n1. Thời hạn bảo hành\r\nChế độ bảo hành bắt đầu được tính ngay kể từ thời điểm xe được giao cho chủ xe đầu tiên. Trong vòng 36 tháng hoặc 100.000 km, tùy thuộc điều kiện nào đến trước, Toyota đảm bảo sẽ sửa chữa hoặc thay thế bất kỳ phụ tùng nào của xe Toyota mới bị hỏng hóc.\r\n– Bảo hành ắc quy: Thời hạn bảo hành cho ắc quy là 12 tháng hoặc 20.000 km tùy điều kiện nào tới trước.\r\n– Bảo hành lốp: Bảo hành lốp: Ðược bảo hành theo chế độ riêng của nhà sản xuất lốp. Để biết thêm chi tiết, xin quý khách vui lòng tham khảo những trang web sau: Bridgestone, Dunlop, Michelin.\r\n\r\n2. Điều kiện bảo hành\r\n\r\nToyota chỉ đảm bảo sửa chữa, thay thế các phụ tùng của xe Toyota mới bị hỏng hóc trong điều kiện:\r\n– Xe hoạt động trong điều kiện bình thường\r\n– Nguyên liệu phụ tùng không tốt\r\n– Lỗi lắp ráp\r\n– Trừ những điều kiện ghi trong mục NHỮNG GÌ KHÔNG ĐƯỢC BẢO HÀNH\r\nChú ý: Bảo hành vẫn áp dụng khi xe được chuyển nhượng cho những chủ xe khác.\r\n\r\n3. Phạm vi áp dụng bảo hành\r\nBảo hành chỉ áp dụng trong phạm vi nước Cộng hòa Xã hội chủ nghĩa Việt Nam.\r\n\r\n4. Bảo hành miễn phí\r\nMọi sửa chữa thuộc chế độ bảo hành (phụ tùng, công lao động) là miễn phí.\r\n\r\nB. Những gì không được bảo hành\r\nNhững yếu tố ngoài kiểm soát của nhà sản xuất\r\n– Những sửa chữa hay điều chỉnh do sử dụng sai (đua xe, chở quá tải), cẩu thả, tự ý sửa đổi, biến cải, đấu nối, tháo ngắt, sửa chữa điều chỉnh không đúng kỹ thuật, tai nạn, tự ý lắp thêm phụ tùng/phụ kiện, không thuộc chế độ bảo hành.\r\n– Ăn mòn do hóa mỹ phẩm hoặc ăn mòn bề mặt xe do bị đá bắn hoặc xước sơn không được bảo hành.\r\n– Hư hại hay bị ăn mòn do môi trường như mưa axit, hóa chất, nhựa cây, muối, mưa đá, mưa bão, sấm chớp, ngập lụt và những tác động tự nhiên khác không được bảo hành.', 'Tự hào là doanh nghiệp đứng vị trí dẫn đầu trên thị trường về dịch vụ sau bán hàng trong nhiều năm liên tiếp và được khách hàng đánh giá cao. A. Những gì được bảo hành 1. Thời hạn bảo hành Chế độ bảo hành bắt đầu được tính ngay kể từ thời điểm […]', '2018-05-06', 'image/chinh-sach-bao-hanh.jpg', 'dịch vụ', 1);
 /*!40000 ALTER TABLE `post` ENABLE KEYS */;
 
--- Dumping structure for table carsalel.role
+-- Dumping structure for table carsale.role
 CREATE TABLE IF NOT EXISTS `role` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) DEFAULT NULL,
@@ -269,14 +270,14 @@ CREATE TABLE IF NOT EXISTS `role` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
--- Dumping data for table carsalel.role: ~2 rows (approximately)
+-- Dumping data for table carsale.role: ~2 rows (approximately)
 /*!40000 ALTER TABLE `role` DISABLE KEYS */;
 INSERT INTO `role` (`id`, `name`, `code`) VALUES
 	(1, 'ADMIN', 'ADMIN'),
 	(2, 'USER', 'USER');
 /*!40000 ALTER TABLE `role` ENABLE KEYS */;
 
--- Dumping structure for table carsalel.spec
+-- Dumping structure for table carsale.spec
 CREATE TABLE IF NOT EXISTS `spec` (
   `spec_id` int(11) NOT NULL AUTO_INCREMENT,
   `spec_name` varchar(50) NOT NULL,
@@ -287,7 +288,7 @@ CREATE TABLE IF NOT EXISTS `spec` (
   CONSTRAINT `spec_ibfk_1` FOREIGN KEY (`car_id`) REFERENCES `car` (`car_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8;
 
--- Dumping data for table carsalel.spec: ~30 rows (approximately)
+-- Dumping data for table carsale.spec: ~30 rows (approximately)
 /*!40000 ALTER TABLE `spec` DISABLE KEYS */;
 INSERT INTO `spec` (`spec_id`, `spec_name`, `detail`, `car_id`) VALUES
 	(1, 'Kích thước', 'Kích thước tổng thể	Dài x Rộng x Cao	mm	4410 x 1700 x 1475\r\nKích thước nội thất	Dài x Rộng x Cao	mm	1915 x 1425 x 1205\r\nChiều dài cơ sở		mm	2550</br>\r\nChiều rộng cơ sở	Trước/Sau	mm	1470/1460\r\nKhoảng sáng gầm xe		mm	145\r\nBán kín quay vòng tối thiểu		m	5.1\r\nTrọng lượng không tải		kg	1050 – 1065\r\nTrọng lượng toàn tải		kg	1500\r\nDung tích bình nhiên liệu		l	42', 1),
@@ -322,7 +323,7 @@ INSERT INTO `spec` (`spec_id`, `spec_name`, `detail`, `car_id`) VALUES
 	(60, 'An toàn', 'Hệ thống phanh	Trước	–	Đĩa thông gió 15 inch\r\nSau	–	Đĩa 15 inch\r\nHệ thống chống bó cứng phanh		–	Có\r\nHệ thống phân phối lực phanh điện tử		–	Có\r\nHệ thống hỗ trợ phanh khẩn cấp		–	Có\r\nTúi khí			Người lái và hành khách phía trước\r\nKhung xe GOA		–	Có', 5);
 /*!40000 ALTER TABLE `spec` ENABLE KEYS */;
 
--- Dumping structure for table carsalel.user
+-- Dumping structure for table carsale.user
 CREATE TABLE IF NOT EXISTS `user` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `full_name` varchar(100) NOT NULL,
@@ -339,12 +340,12 @@ CREATE TABLE IF NOT EXISTS `user` (
   CONSTRAINT `user_ibfk_1` FOREIGN KEY (`role`) REFERENCES `role` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- Dumping data for table carsalel.user: ~3 rows (approximately)
+-- Dumping data for table carsale.user: ~3 rows (approximately)
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`user_id`, `full_name`, `age`, `phone`, `email`, `address`, `username`, `pass`, `role`) VALUES
 	(1, 'Team LTW', 1, '0987654321', 'carsale@gmail.com', 'Hà Nội', 'admin', '$2a$12$EGwRX3G./i9tHRatCetR0.LUAdHlTHTl11hEM.qsc8NgUlF6R/04u', 1),
-	(6, 'Pham minh DUc', 12, '1231111', 'minhduc97.ptit@gmail.com', 'Há»c Viá»n Cong nghá» bÆ°u chÃ­nh viá»n thÃ´ng', 'admin123', '$2a$12$IUzXxZgrd8PW3JvS50OAQeGkk.WJZvkVrr9/tY4zU1Av1tMKkvwNm', 2),
-	(7, 'Pham Minh Duc', 22, '123', 'minhduc97.ptit@gmail.com', 'Há»c Viá»n Cong nghá» bÆ°u chÃ­nh viá»n thÃ´ng', 'minhduc97', '$2a$12$cYGxUZl824dmgDMm0IYEV.i2hXyC.9ks67/P0617nVklyaklWqvzi', 2);
+	(6, 'Pham minh DUc', 12, '1231111', 'minhduc97.ptit@gmail.com', 'Học viện công nghệ BCVT', 'admin123', '$2a$12$IUzXxZgrd8PW3JvS50OAQeGkk.WJZvkVrr9/tY4zU1Av1tMKkvwNm', 2),
+	(7, 'Pham Minh Duc', 22, '123', 'minhduc97.ptit@gmail.com', 'Học viện công nghệ BCVT', 'minhduc97', '$2a$12$cYGxUZl824dmgDMm0IYEV.i2hXyC.9ks67/P0617nVklyaklWqvzi', 2);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

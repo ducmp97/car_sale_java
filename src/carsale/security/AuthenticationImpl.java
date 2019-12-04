@@ -6,15 +6,23 @@ import javax.servlet.http.HttpServletRequest;
 import at.favre.lib.crypto.bcrypt.BCrypt;
 import carsale.model.User;
 import carsale.service.UserService;
-import carsale.serviceImpl.UserServiceImpl;
+import carsale.service.Impl.UserServiceImpl;
 import carsale.untils.SessionUtil;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class AuthenticationImpl.
+ */
 public class AuthenticationImpl implements Authentication {
 
+  /** The user name. */
   private String userName;
-  private String password;
-  private UserService userService;
 
+  /** The password. */
+  private String password;
+
+  /** The user service. */
+  private UserService userService;
 
   /**
    * {@inheritDoc}
@@ -25,13 +33,11 @@ public class AuthenticationImpl implements Authentication {
   public String urlRediect(HttpServletRequest req) {
     User user = null;
     try {
-      //Tim user qua username
-      User userModel= userService.getByUsername(this.userName);
-      //Giai ma mat khau 
-      BCrypt.Result result = BCrypt.verifyer().verify(password.toCharArray(), userModel.getPassword());
-      //Nếu khớp mật khẩu
-      if(result.verified) {
-        user=userModel;
+      User userModel = userService.getByUsername(this.userName);
+      BCrypt.Result result =
+          BCrypt.verifyer().verify(password.toCharArray(), userModel.getPassword());
+      if (result.verified) {
+        user = userModel;
       }
       System.out.println(userModel);
     } catch (NullPointerException e) {
@@ -50,8 +56,12 @@ public class AuthenticationImpl implements Authentication {
   }
 
   /**
+   * Instantiates a new authentication impl.
+   *
    * @param userName
+   *          the user name
    * @param password
+   *          the password
    */
   public AuthenticationImpl(String userName, String password) {
     this.userName = userName;

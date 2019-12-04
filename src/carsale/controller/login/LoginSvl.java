@@ -1,4 +1,4 @@
-package carsale.controller;
+package carsale.controller.login;
 
 import java.io.IOException;
 
@@ -13,21 +13,36 @@ import carsale.model.User;
 import carsale.security.Authentication;
 import carsale.untils.FormUtil;
 
+// TODO: Auto-generated Javadoc
 /**
- * Servlet implementation class LoginSvl
+ * Servlet implementation class LoginSvl.
  */
 @WebServlet(urlPatterns = {"/login" })
 public class LoginSvl extends HttpServlet {
+
+  /** The Constant serialVersionUID. */
   private static final long serialVersionUID = 1L;
 
   /**
+   * Instantiates a new login svl.
+   *
    * @see HttpServlet#HttpServlet()
    */
   public LoginSvl() {
-   
+
   }
 
   /**
+   * Do get.
+   *
+   * @param request
+   *          the request
+   * @param response
+   *          the response
+   * @throws ServletException
+   *           the servlet exception
+   * @throws IOException
+   *           Signals that an I/O exception has occurred.
    * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
    *      response)
    */
@@ -52,6 +67,16 @@ public class LoginSvl extends HttpServlet {
   }
 
   /**
+   * Do post.
+   *
+   * @param request
+   *          the request
+   * @param response
+   *          the response
+   * @throws ServletException
+   *           the servlet exception
+   * @throws IOException
+   *           Signals that an I/O exception has occurred.
    * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
    *      response)
    */
@@ -66,7 +91,7 @@ public class LoginSvl extends HttpServlet {
       System.out.println("Signup: " + user.toString());
       String url =
           Authentication.of(user.getUserName(), user.getPassword()).urlRediect(request);
-      System.out.println("Login URL:"+url);
+      System.out.println("Login URL:" + url);
       response.sendRedirect(request.getContextPath() + url);
     }
   }

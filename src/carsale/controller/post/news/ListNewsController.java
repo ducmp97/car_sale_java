@@ -13,18 +13,27 @@ import com.google.gson.Gson;
 
 import carsale.model.Post;
 import carsale.service.PostService;
-import carsale.serviceImpl.PostServiceImpl;
+import carsale.service.Impl.PostServiceImpl;
 
+// TODO: Auto-generated Javadoc
 /**
- * Servlet implementation class ListNewsController
+ * Servlet implementation class ListNewsController.
  */
 @WebServlet("/api/list-news")
 public class ListNewsController extends HttpServlet {
+
+  /** The Constant serialVersionUID. */
   private static final long serialVersionUID = 1L;
+
+  /** The post service. */
   private PostService postService;
+
+  /** The gson. */
   private Gson gson;
 
   /**
+   * Instantiates a new list news controller.
+   *
    * @see HttpServlet#HttpServlet()
    */
   public ListNewsController() {
@@ -33,6 +42,16 @@ public class ListNewsController extends HttpServlet {
   }
 
   /**
+   * Do get.
+   *
+   * @param request
+   *          the request
+   * @param response
+   *          the response
+   * @throws ServletException
+   *           the servlet exception
+   * @throws IOException
+   *           Signals that an I/O exception has occurred.
    * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
    *      response)
    */

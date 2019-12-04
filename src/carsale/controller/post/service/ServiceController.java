@@ -1,6 +1,7 @@
 package carsale.controller.post.service;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,18 +12,27 @@ import com.google.gson.Gson;
 
 import carsale.model.Post;
 import carsale.service.PostService;
-import carsale.serviceImpl.PostServiceImpl;
+import carsale.service.Impl.PostServiceImpl;
 
+// TODO: Auto-generated Javadoc
 /**
- * Servlet implementation class ServiceController
+ * Servlet implementation class ServiceController.
  */
 @WebServlet("/api/service")
 public class ServiceController extends HttpServlet {
+
+  /** The Constant serialVersionUID. */
   private static final long serialVersionUID = 1L;
+
+  /** The post service. */
   private PostService postService;
+
+  /** The gson. */
   private Gson gson;
 
   /**
+   * Instantiates a new service controller.
+   *
    * @see HttpServlet#HttpServlet()
    */
   public ServiceController() {
@@ -31,6 +41,16 @@ public class ServiceController extends HttpServlet {
   }
 
   /**
+   * Do get.
+   *
+   * @param request
+   *          the request
+   * @param response
+   *          the response
+   * @throws ServletException
+   *           the servlet exception
+   * @throws IOException
+   *           Signals that an I/O exception has occurred.
    * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
    *      response)
    */

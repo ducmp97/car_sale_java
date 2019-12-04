@@ -1,5 +1,5 @@
 
-package carsale.serviceImpl;
+package carsale.service.Impl;
 
 import java.util.ArrayList;
 
