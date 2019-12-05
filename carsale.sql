@@ -1,8 +1,8 @@
 -- --------------------------------------------------------
--- Máy chủ:                      localhost
--- Server version:               8.0.13 - MySQL Community Server - GPL
+-- Host:                         127.0.0.1
+-- Server version:               10.4.6-MariaDB - mariadb.org binary distribution
 -- Server OS:                    Win64
--- HeidiSQL Phiên bản:           10.2.0.5599
+-- HeidiSQL Version:             9.5.0.5196
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -11,8 +11,24 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
--- Dumping data for table carsale.car: ~5 rows (approximately)
-/*!40000 ALTER TABLE `carsale` DISABLE KEYS */;
+
+-- Dumping database structure for carsale
+CREATE DATABASE IF NOT EXISTS `carsale` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `carsale`;
+
+-- Dumping structure for table carsale.car
+CREATE TABLE IF NOT EXISTS `car` (
+  `car_id` int(11) NOT NULL AUTO_INCREMENT,
+  `car_name` varchar(50) NOT NULL,
+  `category` varchar(50) NOT NULL,
+  `type` varchar(50) NOT NULL,
+  `des` varchar(500) NOT NULL,
+  `price` double NOT NULL,
+  PRIMARY KEY (`car_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
+
+-- Dumping data for table carsale.car: ~30 rows (approximately)
+/*!40000 ALTER TABLE `car` DISABLE KEYS */;
 INSERT INTO `car` (`car_id`, `car_name`, `category`, `type`, `des`, `price`) VALUES
 	(1, 'Vios 1.5E (MT)', 'SEDAN', 'Toyota Vios', 'Toyota Innova Vios 1.5E Xe Đủ Màu, Giao Luôn   - Ưu đãi cực lớn cho các dòng xe Vios', 531000000),
 	(2, 'Vios 1.5E (CVT)', 'SEDAN', 'Toyota Vios', 'Toyota Innova Vios 1.5E CVT Xe Đủ Màu, Giao Luôn   - Ưu đãi cực lớn cho các dòng xe Vios', 569000000),
@@ -43,10 +59,16 @@ INSERT INTO `car` (`car_id`, `car_name`, `category`, `type`, `des`, `price`) VAL
 	(27, 'Camry 2.5G', 'SEDAN', 'Toyota Camry', 'Toyota Innova Camry 2.5G Xe Đủ Màu, Giao Luôn   - Giảm giá tiền mặt cực lớn cho các dòng xe Camry', 1106000000),
 	(28, 'Camry 2.0E', 'SEDAN', 'Toyota Camry', 'Toyota Innova Camry 2.5G Xe Đủ Màu, Giao Luôn   - Giảm giá tiền mặt cực lớn cho các dòng xe Camry', 997000000),
 	(29, 'Vios 1.5G (CVT)', 'SEDAN', 'Toyota Vios', 'Toyota Innova Vios 1.5G Xe Đủ Màu, Giao Luôn   - Ưu đãi cực lớn cho các dòng xe Vios', 606000000),
-	(30, 'Hiace Động cơ dầu', 'BÁN TẢI', 'Toyota Hiace', 'Toyota Hiace- Giao Luôn Với Nhiều Quà Tặng Khuyến Mại Hấp Dẫn ', 999000000),
-	(31, 'Land Cruiser VX', 'SUV', 'Toyota Land Cruiser', 'Toyota Land Cruiser VX Phiên Bản Mới Nhất Xe Đủ Màu, Giao Sớm ', 3650000000),
-	(32, 'Land Cruiser Prado VX', 'SUV', 'Toyota Land Cruiser', 'Toyota Prado VX Phiên Bản Mới Nhất Xe Đủ Màu, Giao Sớm    ', 2340000000);
+	(30, 'Hiace Động cơ dầu', 'BÁN TẢI', 'Toyota Hiace', 'Toyota Hiace- Giao Luôn Với Nhiều Quà Tặng Khuyến Mại Hấp Dẫn ', 999000000);
 /*!40000 ALTER TABLE `car` ENABLE KEYS */;
+
+-- Dumping structure for table carsale.city_fee
+CREATE TABLE IF NOT EXISTS `city_fee` (
+  `city_fee_id` int(11) NOT NULL AUTO_INCREMENT,
+  `city_name` varchar(50) NOT NULL,
+  `tax` double NOT NULL,
+  PRIMARY KEY (`city_fee_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table carsale.city_fee: ~3 rows (approximately)
 /*!40000 ALTER TABLE `city_fee` DISABLE KEYS */;
@@ -56,11 +78,37 @@ INSERT INTO `city_fee` (`city_fee_id`, `city_name`, `tax`) VALUES
 	(3, 'Thành phố khác', 0.1);
 /*!40000 ALTER TABLE `city_fee` ENABLE KEYS */;
 
+-- Dumping structure for table carsale.comment
+CREATE TABLE IF NOT EXISTS `comment` (
+  `comment_id` int(11) NOT NULL AUTO_INCREMENT,
+  `content` varchar(2000) NOT NULL,
+  `time_comment` datetime NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `post_id` int(11) NOT NULL,
+  PRIMARY KEY (`comment_id`),
+  KEY `user_id` (`user_id`),
+  KEY `post_id` (`post_id`),
+  CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`),
+  CONSTRAINT `comment_ibfk_2` FOREIGN KEY (`post_id`) REFERENCES `post` (`post_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 -- Dumping data for table carsale.comment: ~0 rows (approximately)
 /*!40000 ALTER TABLE `comment` DISABLE KEYS */;
 /*!40000 ALTER TABLE `comment` ENABLE KEYS */;
 
--- Dumping data for table carsale.description: ~50 rows (approximately)
+-- Dumping structure for table carsale.description
+CREATE TABLE IF NOT EXISTS `description` (
+  `des_id` int(11) NOT NULL AUTO_INCREMENT,
+  `content` varchar(2000) NOT NULL,
+  `type_des` varchar(50) NOT NULL,
+  `des_img` varchar(100) NOT NULL,
+  `car_id` int(11) NOT NULL,
+  PRIMARY KEY (`des_id`),
+  KEY `car_id` (`car_id`),
+  CONSTRAINT `description_ibfk_1` FOREIGN KEY (`car_id`) REFERENCES `car` (`car_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=301 DEFAULT CHARSET=utf8;
+
+-- Dumping data for table carsale.description: ~300 rows (approximately)
 /*!40000 ALTER TABLE `description` DISABLE KEYS */;
 INSERT INTO `description` (`des_id`, `content`, `type_des`, `des_img`, `car_id`) VALUES
 	(1, 'Cụm đèn trước xe  được trang bị đèn halogen phản xạ đa chiều trên nền mạ kim loại sáng bóng, đảm bảo hiệu quả chiếu sáng tối ưu khi di chuyển trên đường.', 'ngoại thất', 'image/oxncrh.jpg', 1),
@@ -365,6 +413,17 @@ INSERT INTO `description` (`des_id`, `content`, `type_des`, `des_img`, `car_id`)
 	(300, 'Động cơ mới được trang bị hệ thống Dual VVT-i giúp tiết kiệm nhiên liệu, vận hành êm ái, thân thiện với môi trường', 'vận hành', 'image/wsdem3.png', 30);
 /*!40000 ALTER TABLE `description` ENABLE KEYS */;
 
+-- Dumping structure for table carsale.image
+CREATE TABLE IF NOT EXISTS `image` (
+  `image_id` int(11) NOT NULL AUTO_INCREMENT,
+  `url` varchar(100) NOT NULL,
+  `type_image` varchar(50) NOT NULL,
+  `car_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`image_id`),
+  KEY `car_id` (`car_id`),
+  CONSTRAINT `image_ibfk_1` FOREIGN KEY (`car_id`) REFERENCES `car` (`car_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8;
+
 -- Dumping data for table carsale.image: ~58 rows (approximately)
 /*!40000 ALTER TABLE `image` DISABLE KEYS */;
 INSERT INTO `image` (`image_id`, `url`, `type_image`, `car_id`) VALUES
@@ -376,7 +435,7 @@ INSERT INTO `image` (`image_id`, `url`, `type_image`, `car_id`) VALUES
 	(6, 'image/1.png', 'car', 2),
 	(7, 'image/3.png', 'car', 3),
 	(8, 'image/2.jpg', 'car', 3),
-	(9, 'image/2toyota-fortuner-6.jpg', 'car', 4),
+	(9, 'image/Fortuner-2.4G-4x2-1.jpg', 'car', 4),
 	(10, 'image/2toyota-fortuner-5.jpg', 'car', 4),
 	(11, 'image/2hilux.jpg', 'car', 13),
 	(12, 'image/2hilux-4.jpg', 'car', 13),
@@ -428,6 +487,21 @@ INSERT INTO `image` (`image_id`, `url`, `type_image`, `car_id`) VALUES
 	(58, 'img/slide/slide4.jpg', 'slide', NULL);
 /*!40000 ALTER TABLE `image` ENABLE KEYS */;
 
+-- Dumping structure for table carsale.post
+CREATE TABLE IF NOT EXISTS `post` (
+  `post_id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(200) NOT NULL,
+  `content` varchar(2000) NOT NULL,
+  `des` varchar(500) NOT NULL,
+  `time_update` date NOT NULL,
+  `post_url` varchar(100) NOT NULL,
+  `type_post` varchar(50) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`post_id`),
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `post_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+
 -- Dumping data for table carsale.post: ~12 rows (approximately)
 /*!40000 ALTER TABLE `post` DISABLE KEYS */;
 INSERT INTO `post` (`post_id`, `title`, `content`, `des`, `time_update`, `post_url`, `type_post`, `user_id`) VALUES
@@ -445,6 +519,14 @@ INSERT INTO `post` (`post_id`, `title`, `content`, `des`, `time_update`, `post_u
 	(12, 'CHÍNH SÁCH BẢO HÀNH', 'Tự hào là doanh nghiệp đứng vị trí dẫn đầu trên thị trường về dịch vụ sau bán hàng trong nhiều năm liên tiếp và được khách hàng đánh giá cao.\r\n\r\nA. Những gì được bảo hành\r\n1. Thời hạn bảo hành\r\nChế độ bảo hành bắt đầu được tính ngay kể từ thời điểm xe được giao cho chủ xe đầu tiên. Trong vòng 36 tháng hoặc 100.000 km, tùy thuộc điều kiện nào đến trước, Toyota đảm bảo sẽ sửa chữa hoặc thay thế bất kỳ phụ tùng nào của xe Toyota mới bị hỏng hóc.\r\n– Bảo hành ắc quy: Thời hạn bảo hành cho ắc quy là 12 tháng hoặc 20.000 km tùy điều kiện nào tới trước.\r\n– Bảo hành lốp: Bảo hành lốp: Ðược bảo hành theo chế độ riêng của nhà sản xuất lốp. Để biết thêm chi tiết, xin quý khách vui lòng tham khảo những trang web sau: Bridgestone, Dunlop, Michelin.\r\n\r\n2. Điều kiện bảo hành\r\n\r\nToyota chỉ đảm bảo sửa chữa, thay thế các phụ tùng của xe Toyota mới bị hỏng hóc trong điều kiện:\r\n– Xe hoạt động trong điều kiện bình thường\r\n– Nguyên liệu phụ tùng không tốt\r\n– Lỗi lắp ráp\r\n– Trừ những điều kiện ghi trong mục NHỮNG GÌ KHÔNG ĐƯỢC BẢO HÀNH\r\nChú ý: Bảo hành vẫn áp dụng khi xe được chuyển nhượng cho những chủ xe khác.\r\n\r\n3. Phạm vi áp dụng bảo hành\r\nBảo hành chỉ áp dụng trong phạm vi nước Cộng hòa Xã hội chủ nghĩa Việt Nam.\r\n\r\n4. Bảo hành miễn phí\r\nMọi sửa chữa thuộc chế độ bảo hành (phụ tùng, công lao động) là miễn phí.\r\n\r\nB. Những gì không được bảo hành\r\nNhững yếu tố ngoài kiểm soát của nhà sản xuất\r\n– Những sửa chữa hay điều chỉnh do sử dụng sai (đua xe, chở quá tải), cẩu thả, tự ý sửa đổi, biến cải, đấu nối, tháo ngắt, sửa chữa điều chỉnh không đúng kỹ thuật, tai nạn, tự ý lắp thêm phụ tùng/phụ kiện, không thuộc chế độ bảo hành.\r\n– Ăn mòn do hóa mỹ phẩm hoặc ăn mòn bề mặt xe do bị đá bắn hoặc xước sơn không được bảo hành.\r\n– Hư hại hay bị ăn mòn do môi trường như mưa axit, hóa chất, nhựa cây, muối, mưa đá, mưa bão, sấm chớp, ngập lụt và những tác động tự nhiên khác không được bảo hành.', 'Tự hào là doanh nghiệp đứng vị trí dẫn đầu trên thị trường về dịch vụ sau bán hàng trong nhiều năm liên tiếp và được khách hàng đánh giá cao. A. Những gì được bảo hành 1. Thời hạn bảo hành Chế độ bảo hành bắt đầu được tính ngay kể từ thời điểm […]', '2018-05-06', 'image/chinh-sach-bao-hanh.jpg', 'dịch vụ', 1);
 /*!40000 ALTER TABLE `post` ENABLE KEYS */;
 
+-- Dumping structure for table carsale.role
+CREATE TABLE IF NOT EXISTS `role` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) DEFAULT NULL,
+  `code` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
 -- Dumping data for table carsale.role: ~2 rows (approximately)
 /*!40000 ALTER TABLE `role` DISABLE KEYS */;
 INSERT INTO `role` (`id`, `name`, `code`) VALUES
@@ -452,10 +534,21 @@ INSERT INTO `role` (`id`, `name`, `code`) VALUES
 	(2, 'USER', 'USER');
 /*!40000 ALTER TABLE `role` ENABLE KEYS */;
 
--- Dumping data for table carsale.spec: ~30 rows (approximately)
+-- Dumping structure for table carsale.spec
+CREATE TABLE IF NOT EXISTS `spec` (
+  `spec_id` int(11) NOT NULL AUTO_INCREMENT,
+  `spec_name` varchar(50) NOT NULL,
+  `detail` varchar(2500) NOT NULL,
+  `car_id` int(11) NOT NULL,
+  PRIMARY KEY (`spec_id`),
+  KEY `car_id` (`car_id`),
+  CONSTRAINT `spec_ibfk_1` FOREIGN KEY (`car_id`) REFERENCES `car` (`car_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=211 DEFAULT CHARSET=utf8;
+
+-- Dumping data for table carsale.spec: ~6 rows (approximately)
 /*!40000 ALTER TABLE `spec` DISABLE KEYS */;
 INSERT INTO `spec` (`spec_id`, `spec_name`, `detail`, `car_id`) VALUES
-	(1, 'Kích thước', 'Kích thước tổng thể	Dài x Rộng x Cao	mm	4410 x 1700 x 1475\r\nKích thước nội thất	Dài x Rộng x Cao	mm	1915 x 1425 x 1205\r\nChiều dài cơ sở		mm	2550</br>\r\nChiều rộng cơ sở	Trước/Sau	mm	1470/1460\r\nKhoảng sáng gầm xe		mm	145\r\nBán kín quay vòng tối thiểu		m	5.1\r\nTrọng lượng không tải		kg	1050 – 1065\r\nTrọng lượng toàn tải		kg	1500\r\nDung tích bình nhiên liệu		l	42', 1),
+	(1, 'Kích thước', 'Kích thước tổng thể	Dài x Rộng x Cao	mm	4410 x 1700 x 1475 </br>\r\nKích thước nội thất	Dài x Rộng x Cao	mm	1915 x 1425 x 1205 </br>\r\nChiều dài cơ sở		mm	2550</br>\r\nChiều rộng cơ sở	Trước/Sau	mm	1470/1460</br>\r\nKhoảng sáng gầm xe		mm	145</br>\r\nBán kín quay vòng tối thiểu		m	5.1</br>\r\nTrọng lượng không tải		kg	1050 – 1065</br>\r\nTrọng lượng toàn tải		kg	1500</br>\r\nDung tích bình nhiên liệu		l	42</br>', 1),
 	(2, 'Động cơ – Vận hành', 'Mã động cơ		–	1NZ – FE\r\nLoại		–	4 xy lanh thẳng hàng,16 van DOHC, VVT – i\r\nDung tích công tác		cc	1497\r\nCông suất tối đa		kW ( HP ) / rpm	80 ( 107 ) / 6000\r\nMomen xoắn tối đa		Nm / rpm	141 / 4200\r\nHệ số cản không khí		–	0.28\r\nVận tốc tối đa		km / h	180\r\nTiêu chuẩn khí xả		–	EURO 4\r\nHộp số		–	Số tự động 4 cấp\r\nHệ thống treo	Trước	–	Độc lập McPherson\r\nSau	–	Dầm xoắn\r\nLốp xe		–	185 / 60 R15\r\nMâm xe		–	Mâm đúc', 1),
 	(3, 'Ngoại thất', 'Cụm đèn trước		–	Halogen; Phản xạ đa chiều\r\nĐèn sương mù phía trước		–	Có\r\nĐèn sương mù phía sau		–	Có\r\nĐèn báo phanh trên cao		–	Có\r\nGương chiếu hậu bên ngoài	Gập điện	–	Có\r\nChỉnh điện	–	Có\r\nTích hợp đèn báo rẽ	–	Có\r\nCùng màu thân xe	–	Có\r\nGạt mưa		–	Gián đoạn, điều chỉnh thời gian\r\nĂng ten		–	Dạng cột', 1),
 	(4, 'Nội thất', 'Tay lái	Kiểu	–	3 chấu, urethane, mạ bạc\r\nNút bấm tích hợp	–	Không\r\nĐiều chỉnh	–	Chỉnh tay 2 hướng ( lên, xuống )\r\nTrợ lực	–	Điện\r\nGương chiếu hậu bên trong		–	2 chế độ ngày & đêm\r\nChất liệu ghế		–	Nỉ cao cấp', 1),
@@ -637,7 +730,24 @@ INSERT INTO `spec` (`spec_id`, `spec_name`, `detail`, `car_id`) VALUES
 	(210, 'An toàn', 'Hệ thống phanh	Trước	–	Đĩa thông gió 15 inch\r\nSau	–	Đĩa 15 inch\r\nHệ thống chống bó cứng phanh	–	Có\r\nHệ thống phân phối lực phanh điện tử		–	Có\r\nHệ thống hỗ trợ phanh khẩn cấp		–	Có\r\nTúi khí			Người lái và hành khách phía trước\r\nKhung xe GOA		–	Có', 30);
 /*!40000 ALTER TABLE `spec` ENABLE KEYS */;
 
--- Dumping data for table carsale.user: ~0 rows (approximately)
+-- Dumping structure for table carsale.user
+CREATE TABLE IF NOT EXISTS `user` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `full_name` varchar(100) NOT NULL,
+  `age` int(11) DEFAULT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `email` varchar(50) NOT NULL,
+  `address` varchar(50) DEFAULT NULL,
+  `username` varchar(50) NOT NULL,
+  `pass` varchar(100) NOT NULL,
+  `role` int(11) NOT NULL,
+  PRIMARY KEY (`user_id`),
+  UNIQUE KEY `username_UNIQUE` (`username`),
+  KEY `role` (`role`),
+  CONSTRAINT `user_ibfk_1` FOREIGN KEY (`role`) REFERENCES `role` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+-- Dumping data for table carsale.user: ~3 rows (approximately)
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`user_id`, `full_name`, `age`, `phone`, `email`, `address`, `username`, `pass`, `role`) VALUES
 	(1, 'Team LTW', 1, '0987654321', 'carsale@gmail.com', 'Hà Nội', 'admin', '$2a$12$EGwRX3G./i9tHRatCetR0.LUAdHlTHTl11hEM.qsc8NgUlF6R/04u', 1),
