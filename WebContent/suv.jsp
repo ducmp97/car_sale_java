@@ -108,7 +108,7 @@
 			</div>
 		</div>
 		<div class="main-content">
-			<div class="wrap">
+			<!-- <div class="wrap">
 				<div class="main-box">
 					<div class="box_wrapper">
 						<h1 id="suv">SUV</h1>
@@ -135,78 +135,14 @@
 					</div>
 				</div>
 				<div class="clear"></div>
-			</div>
+			</div> -->
 
 			<div class="wrap">
 				<div class="main-box">
 					<div class="box_wrapper">
 						<h1 id="suv"><%=resourceBundle.getString("sanpham")%></h1>
 					</div>
-
-					<div class="section group">
-						<div class="col_1_of_4 span_1_of_4">
-							<img src="./img/car1.jpg" alt="" class="ima" />
-							<div class="grid_desc">
-								<p class="title">Fortuner 2.4G 4×2 AT</p>
-								<p class="title1">Lorem ipsum dolor sitconsectetueradipis</p>
-								<div class="price1" style="height: 19px;">
-									<span class="reducedfrom">$66.00</span> <span class="actual">$12.00</span>
-								</div>
-							</div>
-							<div class="Details">
-								<a href="cardetail.jsp" title="Lorem ipsum dolor sit amet, consect etuer"
-									class="button"><%=resourceBundle.getString("chitiet")%> <span></span>
-								</a>
-							</div>
-						</div>
-						<div class="col_1_of_4 span_1_of_4">
-							<img src="./img/car2.jpg" alt="" class="ima" />
-							<div class="grid_desc">
-								<p class="title">Toyota Rush 2018</p>
-								<p class="title1">Lorem ipsum dolor sitconsectetueradipis</p>
-								<div class="price1" style="height: 19px;">
-									<span class="reducedfrom">$66.00</span> <span class="actual">$12.00</span>
-								</div>
-							</div>
-							<div class="Details">
-								<a href="single.jsp" title="Lorem ipsum dolor sit amet, consect etuer"
-									class="button"><%=resourceBundle.getString("chitiet")%> <span></span>
-								</a>
-							</div>
-						</div>
-						<div class="col_1_of_4 span_1_of_4">
-							<img src="./img/car3.jpg" alt="" class="ima" />
-							<div class="grid_desc">
-								<p class="title">Fortuner 2.7V 4×2</p>
-								<p class="title1">Lorem ipsum dolor sitconsectetueradipis</p>
-								<div class="price1" style="height: 19px;">
-									<span class="reducedfrom">$66.00</span> <span class="actual">$12.00</span>
-								</div>
-							</div>
-							<div class="Details">
-								<a href="single.jsp" title="Lorem ipsum dolor sit amet, consect etuer"
-									class="button"><%=resourceBundle.getString("chitiet")%><span></span>
-								</a>
-							</div>
-						</div>
-						<div class="col_1_of_4 span_1_of_4">
-							<img src="./img/car4.jpg" alt="" class="ima" />
-							<div class="grid_desc">
-								<p class="title">Fortuner 2.8V 4×4</p>
-								<p class="title1">Lorem ipsum dolor sitconsectetueradipis</p>
-								<div class="price1" style="height: 19px;">
-									<span class="reducedfrom">$66.00</span> <span class="actual">$12.00</span>
-								</div>
-							</div>
-							<div class="Details">
-								<a href="single.jsp" title="Lorem ipsum dolor sit amet, consect etuer"
-									class="button"><%=resourceBundle.getString("chitiet")%><span></span>
-								</a>
-							</div>
-
-						</div>
-						<div class="clear"></div>
-					</div>
+					<div id="listCar"></div>
 				</div>
 				<div class="clear"></div>
 			</div>
@@ -217,8 +153,76 @@
 	<jsp:include page="jsp/footer.jsp"></jsp:include>
 </body>
 <script>
-
-	var id = getParameterByName("id");
+	function getParameterByName(name) {
+		var results = new RegExp("[\?&]" + name + "=([^&#]*)").exec(
+			window.location.href
+		);
+		if (results == null) {
+			return null;
+		}
+		return decodeURI(results[1]) || 0;
+	}
+	var category = getParameterByName("category");
+	console.log("category", category);
+	getCarByCategory(category);
+	function getCarByCategory(category) {
+		var t = $.ajax({
+			url: "http://localhost:8080/CarSale/api/trang-chu",
+			type: "GET",
+			dataType: "json",
+			contentType: "application/json; charset=utf-8"
+		});
+		t.done(function (result) {
+			//Show list car by category
+			var car = findCarByCategory(category, result);
+			console.log("List car", car);
+			var listCarByCategory = content(car);
+			console.log("listCarByCategory", listCarByCategory);
+			$("#listCar").append(listCarByCategory);
+		});
+	}
+	function findCarByCategory(key, result) {
+		var strKey = '';
+		strKey += key;
+		let car = result.filter(result => {
+			return result.carCategory === strKey;
+		});
+		return car;
+	}
+	function content(array) {
+		console.log("Size Aray", array.length)
+		var content = '';
+		content += '<div class="section group">';
+		var size;
+		if (array.length > 4) {
+			size = 4;
+		} else {
+			size = array.length;
+		}
+		for (let i = 0; i < size; i++) {
+			content += '<div class="col_1_of_4 span_1_of_4">' +
+				'<img src="' + array[i].listImage[0].imageUrl + '" alt="" class="ima" />' +
+				'<div class="grid_desc">' +
+				'<p class="title">' + array[i].carName + "</p>" +
+				'<p class="title1">' + array[i].carDes + '</p>' +
+				'<div class="price1" style="height: 19px;">' +
+				'<span class="reducedfrom">' + (array[i].carPrice).toLocaleString('it-IT', { style: 'currency', currency: 'VND' }) + '</span>' +
+				'</div>' +
+				'</div>' +
+				'<div class="Details">' +
+				'<a' +
+				' href="cardetail.jsp?id=' + array[i].carId + '"' +
+				'title="Lorem ipsum dolor sit amet, consect etuer"' +
+				'class="button">' +
+				'<%=resourceBundle.getString("chitiet")%>' +
+				'</a>' +
+				'</div>' +
+				'</div>';
+		}
+		content += '<div class="clear"></div>' +
+			'</div>';
+		return content;
+	}
 </script>
 
 </html>

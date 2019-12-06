@@ -40,9 +40,8 @@
 
 			function plus(n) {
 				show(index += n);
-
 			}
-
+			
 			function show(n) {
 				var i;
 				var x = document.getElementsByClassName("slide");

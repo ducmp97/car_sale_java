@@ -120,5 +120,4 @@ public class CarDaoImpl extends AbstractDao<Car> implements CarDao {
       return list;
     }
   }
-
 }
