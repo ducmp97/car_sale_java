@@ -108,8 +108,10 @@
 		</div>
 		<div class="clear"></div>
 	</div>
+
 	<!-- Footer -->
 	<jsp:include page="jsp/footer.jsp"></jsp:include>
+
 	<script>
 		loadNewHot();
 		function loadNewHot() {
@@ -132,6 +134,8 @@
 				$("#listNewHot").append(content);
 			});
 		}
+
+
 		function getParameterByName(name) {
 			var results = new RegExp("[\?&]" + name + "=([^&#]*)").exec(
 				window.location.href
@@ -141,13 +145,14 @@
 			}
 			return decodeURI(results[1]) || 0;
 		}
-
 		var id = getParameterByName("id");
 
 		console.log("paramId", id);
-
-		getPostById(id);
-
+		if (id < 11) {
+			getPostById(id);
+		} else {
+			getServiceById(id);
+		}
 
 		function getPostById(id) {
 			var t = $.ajax({
@@ -199,6 +204,58 @@
 				$("#post-new").append(content);
 			});
 		}
+
+		function getServiceById(id) {
+			var t = $.ajax({
+				url: "http://localhost:8080/CarSale/api/service?id=" + id,
+				type: "GET",
+				dataType: "json",
+				contentType: "application/json; charset=utf-8"
+			});
+			t.done(function (result) {
+				//Show list news
+				var content = '';
+				content += '<div class="post">'
+					+ '<div class="header-post">'
+					+ '<h3>' + result.postTitle + '<p class="time">' + result.timeUpdate + '</p>'
+					+ '<a href="#">' + '<img src=' + result.postUrlImg + ' alt="image car" class="center"></a>'
+					+ '</div>'
+					+ '<div class="content-post">'
+					+ '<p>' + result.postContent + '</p>'
+					+ '</div>'
+					+ '<div class="footer-post">'
+					+ '<br>'
+					+ '<p>'
+					+ 'Để biết thêm thông tin chi tiết, xin vui lòng liên hệ các Đại lý Toyota trên toàn quốc hoặc truy cập website:'
+					+ '</p>'
+					+ '<br>'
+					+ '<p>http://otohn.com</p>'
+					+ '<br>'
+					+ '<p><b>WEB  BÁN Ô TÔ HN</b></p>'
+					+ '<p><b>- Địa chỉ: </b>Học viện Công nghệ Bưu chính viễn thông </p>'
+					+ '<p><b>- Hotline: 03456789</b></p>'
+					+ '<p><i>Đừng ngần ngại liên hệ với chúng tôi trước để được phục vụ tốt nhất!</i></p>'
+					+ '<p><img src="icon/tags.png" class="icon"><b>Tags: </b>No tag</p>'
+					+ '</div>'
+					+ '<div class="block-comment">'
+					+ '<form>'
+					+ '<h3>Leave Comments</h3><br><br>'
+					+ '<b>Name</b><span style="color:red">(*)</span><br><br>'
+					+ '<input type="text" name="name"><br><br>'
+					+ '<b>Email</b><span style="color:red">(*)</span><br><br>'
+					+ '<input type="text" name="email" ><br><br>'
+					+ '<b>Website</b><br><br>'
+					+ '<input type="text" name="website" ><br><br>'
+					+ '<b>Comment</b><span style="color:red">(*)</span><br><br>'
+					+ '<input type="text" name="comment" id="textArea" ><br><br>'
+					+ '<input type="button" name="submit" value="Post comment" class="submit"><br><br>'
+					+ '</form>'
+					+ '</div>'
+					+ '</div>';
+				$("#post-new").append(content);
+			});
+		}
+
 	</script>
 </body>
 
