@@ -175,9 +175,20 @@
 		t.done(function (result) {
 			//Show list car by category
 			var car = findCarByCategory(category, result);
-			console.lo
-			var listCarByCategory = content(car);
-			console.log("listCarByCategory", listCarByCategory);
+			var row = Math.ceil(car.length / 4);
+			var listCarByCategory = '';
+			for (let i = 0; i < row - 1; i++) {
+				let listCarRow = [];
+				for (let j = 0; j < 4; j++) {
+					listCarRow.push(car[i * 4 + j]);
+				}
+				listCarByCategory += content(listCarRow);
+			}
+			let listCarRowEnd = [];
+			for (let i = 4 * (row - 1); i < car.length; i++) {
+				listCarRowEnd.push(car[i]);
+			}
+			listCarByCategory += content(listCarRowEnd);
 			$("#listCar").append(listCarByCategory);
 		});
 	}
@@ -199,18 +210,13 @@
 				'<img src="' + array[i].listImage[0].imageUrl + '" alt="" class="ima" />' +
 				'<div class="grid_desc">' +
 				'<p class="title">' + array[i].carName + "</p>" +
-				'<p class="title1">' + array[i].carDes + '</p>' +
+				// '<p class="title1">' + array[i].carDes + '</p>' +
 				'<div class="price1" style="height: 19px;">' +
 				'<span class="reducedfrom">' + (array[i].carPrice).toLocaleString('it-IT', { style: 'currency', currency: 'VND' }) + '</span>' +
 				'</div>' +
 				'</div>' +
 				'<div class="Details">' +
-				'<a' +
-				' href="cardetail.jsp?id=' + array[i].carId + '"' +
-				'title="Lorem ipsum dolor sit amet, consect etuer"' +
-				'class="button">' +
-				'<%=resourceBundle.getString("chitiet")%>' +
-				'</a>' +
+				'<a href="cardetail.jsp?id=' + array[i].carId + '" class="button"><%=resourceBundle.getString("chitiet")%></a>' +
 				'</div>' +
 				'</div>';
 		}
