@@ -1,13 +1,8 @@
-/*
- * (C) Copyright Global CyberSoft (GCS) 2019. All rights reserved. Proprietary and confidential.
- */
+
 package carsale.untils;
 
 import javax.servlet.http.HttpServletRequest;
 
-/**
- * @author <a href="mailto:developer@hitachiconsulting.com">minhduc97.ptit</a>
- */
 public class SessionUtil {
   private static SessionUtil sessionUtil = null;
 

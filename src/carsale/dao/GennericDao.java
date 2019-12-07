@@ -14,4 +14,6 @@ public interface GennericDao<T> {
   public Long insert(String sql, Object... parameters);
 
   public int count(String sql, Object... parameters);
+  
+  public Long delete(String sql, Object... parameters);
 }

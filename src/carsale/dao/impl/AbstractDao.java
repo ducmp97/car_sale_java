@@ -14,7 +14,6 @@ import java.util.List;
 import carsale.dao.GennericDao;
 import carsale.mapper.IRowMapper;
 
-
 public class AbstractDao<T> implements GennericDao<T> {
 
   public Connection getConnection() {
@@ -32,7 +31,7 @@ public class AbstractDao<T> implements GennericDao<T> {
   }
 
   @Override
-  public List<T> query(String sql, IRowMapper<T> rowMapper,Object...  parameters) {
+  public List<T> query(String sql, IRowMapper<T> rowMapper, Object... parameters) {
     Connection connection = null;
     PreparedStatement statement = null;
     ResultSet resultSet = null;
@@ -67,7 +66,7 @@ public class AbstractDao<T> implements GennericDao<T> {
     }
   }
 
-  private void setParameter(PreparedStatement statement, Object... parameters) { 
+  private void setParameter(PreparedStatement statement, Object... parameters) {
     try {
       for (int i = 0; i < parameters.length; i++) {
         int index = i + 1;
@@ -141,7 +140,56 @@ public class AbstractDao<T> implements GennericDao<T> {
     try {
       connection = getConnection();
       connection.setAutoCommit(false);
-      statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS); // chu
+      statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS); 
+      setParameter(statement, parameters);
+      statement.executeUpdate();
+      resultSet = statement.getGeneratedKeys();
+      if (resultSet.next())
+        id = resultSet.getLong(1);
+      connection.commit();
+      return id;
+    } catch (SQLException e) {
+      if (connection != null) {
+        try {
+          connection.rollback();
+        } catch (SQLException e1) {
+          // TODO Auto-generated catch block
+          e1.printStackTrace();
+        }
+      }
+      return null;
+    } finally {
+      try {
+        if (connection != null) {
+          connection.close();
+        }
+        if (statement != null) {
+          statement.close();
+        }
+        if (resultSet != null)
+          resultSet.close();
+      } catch (SQLException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+      }
+    }
+  }
+
+  /**
+   * {@inheritDoc}
+   * 
+   * @see carsale.dao.GennericDao#delete(java.lang.String, java.lang.Object[])
+   */
+  @Override
+  public Long delete(String sql, Object... parameters) {
+    Long id = null;
+    Connection connection = null;
+    PreparedStatement statement = null;
+    ResultSet resultSet = null;
+    try {
+      connection = getConnection();
+      connection.setAutoCommit(false);
+      statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS); 
       setParameter(statement, parameters);
       statement.executeUpdate();
       resultSet = statement.getGeneratedKeys();

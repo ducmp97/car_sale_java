@@ -54,9 +54,8 @@ public class CityFeeServiceImpl implements CityFeeService {
    * @see carsale.service.CityFeeService#deleteCityFree(int)
    */
   @Override
-  public int deleteCityFree(int cityFeeId) {
-    // TODO Auto-generated method stub
-    return 0;
+  public Long deleteCityFree(int cityFeeId) {
+    return citiFeeDao.deleteCityFee(cityFeeId);
   }
 
   /**
@@ -65,9 +64,9 @@ public class CityFeeServiceImpl implements CityFeeService {
    * @see carsale.service.CityFeeService#insertCityFee(carsale.model.CityFee)
    */
   @Override
-  public int insertCityFee(CityFee cityFee) {
+  public Long insertCityFee(CityFee cityFee) {
     // TODO Auto-generated method stub
-    return 0;
+    return null;
   }
 
 }

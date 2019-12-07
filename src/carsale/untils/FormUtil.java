@@ -1,6 +1,4 @@
-/*
- * (C) Copyright Global CyberSoft (GCS) 2019. All rights reserved. Proprietary and confidential.
- */
+
 package carsale.untils;
 
 import java.lang.reflect.InvocationTargetException;

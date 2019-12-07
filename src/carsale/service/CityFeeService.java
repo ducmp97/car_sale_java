@@ -41,7 +41,7 @@ public interface CityFeeService {
    *          the city fee id
    * @return the int
    */
-  public int deleteCityFree(int cityFeeId);
+  public Long deleteCityFree(int cityFeeId);
 
   /**
    * Insert city fee.
@@ -50,5 +50,5 @@ public interface CityFeeService {
    *          the city fee
    * @return the int
    */
-  public int insertCityFee(CityFee cityFee);
+  public Long insertCityFee(CityFee cityFee);
 }

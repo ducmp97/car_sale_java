@@ -1,4 +1,4 @@
-package carsale.controller;
+package carsale.controller.ctiyfee;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 
+import carsale.model.Car;
 import carsale.model.CityFee;
 import carsale.service.CityFeeService;
 import carsale.service.Impl.CityFeeServiceImpl;
@@ -45,4 +46,28 @@ public class CityFreeController extends HttpServlet {
     response.getWriter().write(json);
   }
 
+  /**
+   * {@inheritDoc}
+   * 
+   * @see javax.servlet.http.HttpServlet#doDelete(javax.servlet.http.HttpServletRequest,
+   *      javax.servlet.http.HttpServletResponse)
+   */
+  @Override
+  protected void doDelete(HttpServletRequest request, HttpServletResponse response)
+      throws ServletException, IOException {
+    String id = request.getParameter("id");
+    int cityFeeId = Integer.parseInt(id);
+    Long result = cityFeeService.deleteCityFree(cityFeeId);
+    String status = "";
+    if (response.SC_OK == 200) {
+      status = "Delete success!!";
+    } else {
+      status = "Delete fail!!";
+    }
+    String json = gson.toJson(status);
+    response.setContentType("application/json");
+    response.setCharacterEncoding("UTF-8");
+
+    response.getWriter().write(json);
+  }
 }

@@ -22,11 +22,6 @@ public class UserDaoImpl extends AbstractDao<User> implements UserDao {
     }
   }
 
-  public static void main(String[] args) {
-    UserDao dao = new UserDaoImpl();
-    System.out.println(dao.isExits("admin", "admin"));
-  }
-
   /**
    * {@inheritDoc}
    * 
