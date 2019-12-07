@@ -23,6 +23,9 @@ public class CityFee implements Serializable {
   /** The registration. */
   private Double registration;
 
+  /** The road fee. */
+  private Double roadFee;
+  
   /** The insurrance. */
   private Double insurrance;
 
@@ -140,6 +143,25 @@ public class CityFee implements Serializable {
   }
 
   /**
+   * Gets the roadFee.
+   *
+   * @return the roadFee
+   */
+  public Double getRoadFee() {
+    return roadFee;
+  }
+
+  /**
+   * Sets the roadFee.
+   *
+   * @param roadFee
+   *          the roadFee to set
+   */
+  public void setRoadFee(Double roadFee) {
+    this.roadFee = roadFee;
+  }
+  
+  /**
    * Gets the insurrance.
    *
    * @return the insurrance
@@ -185,7 +207,7 @@ public class CityFee implements Serializable {
   @Override
   public String toString() {
     return "CityFee [cityFeeId=" + cityFeeId + ", cityName=" + cityName + ", tax=" + tax
-        + ", registration=" + registration + ", insurrance=" + insurrance + ", licensePlate="
+        + ", registration=" + registration + ", roadFee=" + roadFee + ", insurrance=" + insurrance + ", licensePlate="
         + licensePlate + "]";
   }
 
