@@ -88,7 +88,7 @@
                     '<img src="./icon/wallet_16px.png" />' +
                     '<p>' + '<%=resourceBundle.getString("tinhmuatragop")%>' + '</p>' +
                     '</button>' +
-                    '<button class="button-contact2">' +
+                    '<button onclick = "getLink()" id = "myButton" class="button-contact2">' +
                     '<img src="./icon/calculator_16px.png" />' +
                     '<p>' + '<%=resourceBundle.getString("dutoanchiphi")%>' + '</p>' +
                     '</button>' +
@@ -97,7 +97,14 @@
             }
             return content;
         }
+        function getLink(){
+        	 var myBtn = document.getElementById('myButton');
+        	 myBtn.addEventListener('click', function(event) {
+        		    window.location.href='costEstimates.jsp';
+        		  });
+        }
     </script>
+    
 </body>
 
 </html>

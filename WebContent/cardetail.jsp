@@ -120,7 +120,7 @@
 							<div id="carDes"></div>
 							<div style="padding-top: 50px; padding-left: 50px;">
 								<button class="button-detail">Đăng ký mua trả góp</button>
-								<button class="button-detail">Ước lượng chi phí</button>
+								<button class="button-detail" id = "button-cost-estimates" onclick = "clickCostEstimates()">Ước lượng chi phí</button>
 							</div>
 						</div>
 					</div>
@@ -260,7 +260,13 @@
 				'</div>';
 			return content;
 		}
-
+		
+		function clickCostEstimates(){
+       	 var myBtn = document.getElementById('button-cost-estimates');
+       	 myBtn.addEventListener('click', function(event) {
+       		    window.location.href='costEstimates.jsp';
+       		  });
+       }
 	</script>
 </body>
 
