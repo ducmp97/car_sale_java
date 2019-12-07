@@ -57,11 +57,13 @@ INSERT INTO `car` (`car_id`, `car_name`, `category`, `type`, `des`, `price`) VAL
 	(30, 'Hiace Động cơ dầu', 'BÁN TẢI', 'Toyota Hiace', 'Toyota Hiace- Giao Luôn Với Nhiều Quà Tặng Khuyến Mại Hấp Dẫn ', 999000000);
 /*!40000 ALTER TABLE `car` ENABLE KEYS */;
 
+-- Dumping structure for table carsale.city_fee
 CREATE TABLE IF NOT EXISTS `city_fee` (
   `city_fee_id` int(11) NOT NULL AUTO_INCREMENT,
   `city_name` varchar(50) NOT NULL,
   `tax` double NOT NULL,
   `registration` double NOT NULL,
+  `road_fee` double NOT NULL,
   `insurrance` double NOT NULL,
   `license_plate` double NOT NULL,
   PRIMARY KEY (`city_fee_id`)
@@ -69,10 +71,10 @@ CREATE TABLE IF NOT EXISTS `city_fee` (
 
 -- Dumping data for table carsale.city_fee: ~3 rows (approximately)
 /*!40000 ALTER TABLE `city_fee` DISABLE KEYS */;
-INSERT INTO `city_fee` (`city_fee_id`, `city_name`, `tax`, `registration`, `insurrance`, `license_plate`) VALUES
-	(1, 'Hà Nội', 0.12, 0.1, 0.1, 0.1),
-	(2, 'Hồ Chí Minh', 0.1, 0.1, 0.1, 0.1),
-	(3, 'Thành phố khác', 0.1, 0.1, 0.1, 0.1);
+INSERT INTO `city_fee` (`city_fee_id`, `city_name`, `tax`, `registration`,`road_fee`, `insurrance`, `license_plate`) VALUES
+	(1, 'Hà Nội', 0.1, 340000, 1560000,480700,10000000),
+	(2, 'Hồ Chí Minh', 0.12, 340000, 1560000,480700,11000000),
+	(3, 'Thành phố khác', 0.12, 340000, 1560000,480700,10000000);
 
 -- Dumping structure for table carsale.comment
 CREATE TABLE IF NOT EXISTS `comment` (
