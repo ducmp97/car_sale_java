@@ -125,7 +125,7 @@
 			t.done(function (result) {
 				//Show list news
 				var content = '';
-				for (let i = 0; i < result.length; i++) {
+				for (var i = 0; i < result.length; i++) {
 					content += '<div class="image-text">'
 						+ '<div class="image">' + '<a href="post.jsp?id=' + result[i].postId + '" ><img src=' + result[i].postUrlImg
 						+ ' alt="imageCar"></a>'
@@ -164,7 +164,7 @@
 			t.done(function (result) {
 				//Show list news hot
 				var content = '';
-				for (let i = 0; i < 3; i++) {
+				for (var i = 0; i < 3; i++) {
 					content += '<div>'
 						+ '<a href="post.jsp?id=' + result[i].postId + '"><img src=' + result[i].postUrlImg + ' alt="hot new"></a>'
 						+ '<p>' + result[i].postTitle + '</p>'
