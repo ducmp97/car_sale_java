@@ -111,7 +111,6 @@
 	<!-- Get List car -->
 	<script>
 		loadCbCar();
-
 		function loadCbCar() {
 			var t = $.ajax({
 				url: "http://localhost:8080/CarSale/api/list-price",
@@ -131,11 +130,9 @@
 					}
 					content += '</select>' + '</div>'
 					$("#list-car").append(content);
-
 				});
 		}
 		loadCbCity();
-
 		function loadCbCity() {
 			var t = $.ajax({
 				url: "http://localhost:8080/CarSale/api/city-fee",
@@ -161,10 +158,8 @@
 					}
 					content += '</select>' + '</div>'
 					$("#list-city").append(content);
-
 				});
 		}
-
 		function selectCar() {
 			var price = document.getElementById("selectCar").value;
 			document.getElementById("price").innerHTML = (price * 1.0)
@@ -173,7 +168,6 @@
 					currency: 'VND'
 				});
 		}
-
 		function selectCity() {
 			var fee = document.getElementById("selectCity").value;
 			var fee = fee.split(",");

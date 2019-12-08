@@ -5,59 +5,53 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <link href="css/styles.css" rel="stylesheet" type="text/css" />
-    <link href="css/abc.css" rel="stylesheet" type="text/css" />
-    <link href="css/content.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Car-sale</title>
-    <link href="https://fonts.googleapis.com/css?family=Be+Vietnam&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+<link href="css/abc.css" rel="stylesheet" type="text/css" />
+<link href="css/content.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Car-sale</title>
+<link
+	href="https://fonts.googleapis.com/css?family=Be+Vietnam&display=swap"
+	rel="stylesheet">
 </head>
 
 <body>
-    <%
-		ResourceBundle resourceBundle = ResourceBundle.getBundle("carsale.common.Content", request.getLocale());
+	<%
+	  ResourceBundle resourceBundle = ResourceBundle.getBundle("carsale.common.Content", request.getLocale());
 	%>
-    <!-- Header -->
-    <jsp:include page="jsp/header.jsp"></jsp:include>
-    <!-- Content -->
-    <div>
-        <div style="margin-top: 5%;">
-            <h1>
-                <%=resourceBundle.getString("banggiaxethang")%>
-            </h1>
-        </div>
-        <div style="margin: 0 10% 0 10%">
-            <table class="responstable">
-                <thead>
-                    <tr>
-                        <th>
-                            <%=resourceBundle.getString("tensanpham")%>
-                        </th>
-                        <th>
-                            <%=resourceBundle.getString("mieutangan")%>
-                        </th>
-                        <th>
-                            <%=resourceBundle.getString("giaxe")%>
-                        </th>
-                        <th>
-                            <%=resourceBundle.getString("contact")%>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody id="listCar">
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <!-- Footer -->
-    <jsp:include page="jsp/footer.jsp"></jsp:include>
-    <script type="text/javascript">
+	<!-- Header -->
+	<jsp:include page="jsp/header.jsp"></jsp:include>
+	<!-- Content -->
+	<div>
+		<div style="margin-top: 5%;">
+			<h1>
+				<%=resourceBundle.getString("banggiaxethang")%>
+			</h1>
+		</div>
+		<div style="margin: 0 10% 0 10%">
+			<table class="responstable">
+				<thead>
+					<tr>
+						<th><%=resourceBundle.getString("tensanpham")%></th>
+						<th><%=resourceBundle.getString("mieutangan")%></th>
+						<th><%=resourceBundle.getString("giaxe")%></th>
+						<th><%=resourceBundle.getString("contact")%></th>
+					</tr>
+				</thead>
+				<tbody id="listCar">
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<!-- Footer -->
+	<jsp:include page="jsp/footer.jsp"></jsp:include>
+	<script type="text/javascript">
         test();
-        var numberCar = 0; //số lượng xe
+
         function test() {
             var t = $.ajax({
                 url: "http://localhost:8080/CarSale/api/list-price",
@@ -87,7 +81,7 @@
                     '<img src="./icon/wallet_16px.png" />' +
                     '<p>' + '<%=resourceBundle.getString("tinhmuatragop")%>' + '</p>' +
                     '</button>' +
-                    '<button onclick = "clickCostEstimates()" id="' + i + '" class="button-contact2">' +
+                    '<button onclick = "clickCostEstimates()" id="'+i+'" class="button-contact2">' +
                     '<img src="./icon/calculator_16px.png" />' +
                     '<p>' + '<%=resourceBundle.getString("dutoanchiphi")%>' + '</p>' +
                     '</button>' +
@@ -96,15 +90,14 @@
             }
             return content;
         }
-
-        function clickCostEstimates() {
-            for (var i = 0; i < soLuongXe; i++) {
-                var myBtn = document.getElementById(i);
-                myBtn.addEventListener('click', function (event) {
-                    window.location.href = 'costEstimates.jsp';
-                });
-            }
-        }
+       function clickCostEstimates(){  
+    	   for(var i=0;i<soLuongXe;i++){
+       			var myBtn = document.getElementById(i);
+	       		myBtn.addEventListener('click', function(event) {
+	        		    window.location.href='costEstimates.jsp';
+        		});
+       	 }
+       }
     </script>
 </body>
 
