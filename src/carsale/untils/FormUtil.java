@@ -1,25 +1,17 @@
 
 package carsale.untils;
 
-import java.lang.reflect.InvocationTargetException;
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.beanutils.BeanUtils;
 
 public class FormUtil {
-  public static <T> T toModel(Class<T> clazz, HttpServletRequest req) {
+  public static <T> T toModel(Class<T> t, HttpServletRequest req) {
     T object = null;
     try {
-      object = clazz.newInstance();
+      object = t.newInstance();
       BeanUtils.populate(object, req.getParameterMap());
-    } catch (InstantiationException e) {
-      // TODO Auto-generated catch block
-      e.printStackTrace();
-    } catch (IllegalAccessException e) {
-      // TODO Auto-generated catch block
-      e.printStackTrace();
-    } catch (InvocationTargetException e) {
+    } catch (Exception e) {
       // TODO Auto-generated catch block
       e.printStackTrace();
     }
