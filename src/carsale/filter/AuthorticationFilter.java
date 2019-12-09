@@ -42,7 +42,6 @@ public class AuthorticationFilter implements Filter {
     HttpServletRequest req = (HttpServletRequest) request;
     HttpServletResponse resp = (HttpServletResponse) response;
     String url = req.getRequestURI();
-    System.out.println("Filter urf: " + url);
     if (url.startsWith(req.getContextPath() + "/admin")) {
       User user = (User) SessionUtil.getInstance().getValue(req, "USER");
       if (user != null) {

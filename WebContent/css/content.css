@@ -814,11 +814,11 @@ span.actual {
 .Details {
   float: none;
   padding: 20px 0 20px 20px;
-  width: 150px;
+  width: 100px;
 }
 
 .Details a {
-  width: 150px;
+  width: 100px;
   height: 32px;
   display: inline-block;
   background: #a30505;

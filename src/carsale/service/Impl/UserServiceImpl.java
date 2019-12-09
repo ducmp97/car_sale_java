@@ -9,7 +9,6 @@ import at.favre.lib.crypto.bcrypt.BCrypt;
 import carsale.dao.UserDao;
 import carsale.dao.impl.UserDaoImpl;
 import carsale.model.ChangePassword;
-import carsale.model.Role;
 import carsale.model.User;
 import carsale.service.RoleService;
 import carsale.service.UserService;
@@ -27,6 +26,7 @@ public class UserServiceImpl implements UserService {
   /** The b crypt. */
   private BCrypt bCrypt;
 
+  /** The role service. */
   private RoleService roleService;
 
   /**

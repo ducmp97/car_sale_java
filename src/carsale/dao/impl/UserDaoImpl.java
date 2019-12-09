@@ -63,7 +63,6 @@ public class UserDaoImpl extends AbstractDao<User> implements UserDao {
    */
   @Override
   public void updateUser(User user) {
-    System.out.println("User DAO Impl: "+ user.toString());
     StringBuilder sql = new StringBuilder("Update user AS u ");
     sql.append(
         " SET u.full_name=?, u.age=?,u.phone=?, u.email=?, u.address=?");
