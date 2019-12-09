@@ -17,12 +17,12 @@ import carsale.mapper.IRowMapper;
 public class AbstractDao<T> implements GennericDao<T> {
 
   public Connection getConnection() {
-    String dbUrl = "jdbc:mariadb://localhost:3307/carsale";
-    String dbClass = "org.mariadb.jdbc.Driver";
+	  String dbUrl = "jdbc:mysql://localhost:3306/banoto";
+	    String dbClass = "com.mysql.jdbc.Driver";
     try {
       Class.forName(dbClass);
       System.out.println("Connect succes.");
-      return DriverManager.getConnection(dbUrl, "root", "minhduc97");
+      return DriverManager.getConnection(dbUrl, "root", "1234");
 
     } catch (ClassNotFoundException | SQLException e) {
       System.out.println(e.getMessage());
