@@ -27,45 +27,7 @@
 
     <body>
         <!-- Hearder -->
-        <div class="header">
-            <div>
-                <a href="index.html" style='font-size:18px'>Admin Carsale</a>&nbsp
-                <i class='fas fa-car' style='font-size:30px;color:red'></i>
-            </div>
-            <div class=" dropdownadmin">
-                <!-- /.dropdown -->
-                <button class="dropbtn">Admin
-                <i class="fa fa-user fa-fw"></i> 
-                <i class="fa fa-caret-down"></i>
-            </button>
-                <div class="dropdownnew">
-                    <div class="row-new">
-                        <div class="columnnew">
-                            <a href="use_detail.html"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </div>
-                        <div class="columnnew">
-                            <a href="change_pass.html"><i class="fa fa-gear fa-fw"></i> Change Password</a>
-                        </div>
-                        <div class="columnnew">
-                            <a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="navbar">
-            <a href="index.html"><i class='fas fa-home' style='font-size:20px;color:red'>&nbsp</i>Trang chủ</a>
-            <div class="dropdown">
-                <a href="contact.html"><i class="fa fa-bar-chart" style="font-size:20px;color:red">&nbsp</i>Sản phẩm</a>
-            </div>
-            <div class="dropdown">
-                <a href="contact.html"><i class="fa fa-bar-chart" style="font-size:20px;color:red">&nbsp</i>Tin tức</a>
-            </div>
-            <div class="dropdown">
-                <a href="contact.html"><i class='far fa-edit' style='font-size:20px;color:red'>&nbsp</i>Dịch vụ</a>
-            </div>
-            <a href="contact.html"><i class='fas fa-phone' style='font-size:20px;color:red'>&nbsp</i>Liên hệ</a>
-        </div>
+        <jsp:include page="../admin/jsp-common/header-admin.jsp"></jsp:include>
         <!--CONTENT-->
         <div id="page-wrapper">
             <div class="container-fluid">
@@ -122,69 +84,7 @@
                 </div>
             </div>
         </div>
-        <footer>
-            <div class="footer-top ">
-                <div class="footer-grid center-grid ">
-                    <h3>Về chúng tôi</h3>
-                    <div class="f_menu ">
-                        <ul>
-                            <li>Địa chỉ: Học viện công Nghệ Bưu chính viễn thông</li>
-                            <li>Hotline: 0973.631.248 </li>
-                            <li>
-                                <i>
-                                Đừng ngần ngại liên hệ với chúng tôi trước để được phục vụ tốt nhất
-                            </i>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="footer-grid right-grid ">
-                    <h3>Thông tin liên hệ</h3>
-                    <ul class="follow_icon ">
-                        <li>
-                            <a href="# " style="opacity: 1; ">
-                                <img src="icon/follow_icon.png " alt=" ">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="# " style="opacity: 1; ">
-                                <img src="icon/follow_icon1.png " alt=" ">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="# " style="opacity: 1; ">
-                                <img src="icon/follow_icon2.png " alt=" ">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="# " style="opacity: 1; ">
-                                <img src="icon/follow_icon3.png " alt=" ">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="# " style="opacity: 1; ">
-                                <img src="icon/follow_icon4.png " alt=" ">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="# " style="opacity: 1; ">
-                                <img src="icon/follow_icon5.png " alt=" ">
-                            </a>
-                        </li>
-                    </ul>
-                    <p>Mọi góp ý xin gọi: 03456789</p>
-                    <span>
-                    <a href="ltwthaydung@carssale.com ">support(at)carssale.com</a>
-                </span>
-                </div>
-                <div class="clear "></div>
-            </div>
-            <div class="copy-right ">
-                <p>Bản quyền &copy; 2019 Car Sale. Đã đăng ký bản quyền | Thiết kê bởi
-                    <a href="# "> Nhom LTW </a>
-                </p>
-            </div>
-        </footer>
+        <jsp:include page="../jsp/footer.jsp"></jsp:include>
     </body>
 
     </html>
