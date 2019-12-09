@@ -101,7 +101,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="main-content">
+		<div class="main-content container-right">
 			<div class="wrap">
 				<div class="main-box">
 					<div id="carName"></div>
