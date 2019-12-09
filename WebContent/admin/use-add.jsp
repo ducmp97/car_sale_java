@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
     <!DOCTYPE html>
     <html lang="en">
 
@@ -15,6 +15,38 @@
         <link href="./dist/css/sb-admin-2.css" rel="stylesheet">
         <script src='https://kit.fontawesome.com/a076d05399.js'></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            input[type=text],
+            select {
+                width: 50%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+            
+            input[type=password] {
+                width: 50%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+            
+            input[type=email] {
+                width: 50%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+        </style>
     </head>
 
     <body>
@@ -26,59 +58,48 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <p><br></p>
-                        <h1 class="page-header">Product Edit</h1>
+                        <h1 class="page-useadd" style="padding-right:600px">User Add</h1>
                         <p><br></p>
                     </div>
+                    <!-- /.col-lg-12 -->
                     <div class="col-lg-7" style="padding-bottom:120px">
                         <form action="" method="POST">
                             <div class="form-group">
-                                <label>Name</label><br>
-                                <input class="form-control" name="txtName" placeholder="Please Enter Username" />
+                                <label>Username</label> <br>
+                                <input type="text" class="form-control" name="txtUser" placeholder="Please Enter Username" />
                             </div>
                             <div class="form-group">
-                                <label>Price</label><br>
-                                <input class="form-control" name="txtPrice" placeholder="Please Enter Password" />
+                                <label>Password</label><br>
+                                <input type="password" class="form-control" name="txtPass" placeholder="Please Enter Password" />
                             </div>
                             <div class="form-group">
-                                <label>Intro</label>
-                                <textarea class="form-control" rows="3" name="txtIntro"></textarea>
+                                <label>RePassword</label><br>
+                                <input type="password" class="form-control" name="txtRePass" placeholder="Please Enter RePassword" />
                             </div>
                             <div class="form-group">
-                                <label>Content</label>
-                                <textarea class="form-control" rows="3" name="txtContent"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label>Images</label>&nbsp;
-                                <input type="file" name="fImages">
+                                <label>Email</label><br>
+                                <input type="email" class="form-control" name="txtEmail" placeholder="Please Enter Email" />
                             </div>
                             <br>
                             <div class="form-group">
-                                <label>Product Keywords</label><br>
-                                <input class="form-control" name="txtOrder" placeholder="Please Enter Category Keywords" />
-                            </div>
-                            <br>
-                            <div class="form-group">
-                                <label>Product Description</label>
-                                <textarea class="form-control" rows="3"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label>Product Status</label>&nbsp;
+                                <label>User Level</label>
                                 <label class="radio-inline">
-                                    <input name="rdoStatus" value="1" checked="" type="radio">Visible
-                                </label>
+                                <input name="rdoLevel" value="1" checked="" type="radio">Admin
+                            </label>
                                 <label class="radio-inline">
-                                    <input name="rdoStatus" value="2" type="radio">Invisible
+                                <input name="rdoLevel" value="2" type="radio">Member
                             </label>
                             </div>
                             <br>
-                            <button type="submit" class="btn btn-default">Product Edit</button> &nbsp;
+                            <button type="submit" class="btn btn-default">User Add</button>
                             <button type="reset" class="btn btn-default">Reset</button>
                             <form>
                     </div>
                 </div>
+                <!-- /.row -->
             </div>
+            <!-- /.container-fluid -->
         </div>
-        <!-- Footer -->
         <jsp:include page="../jsp/footer.jsp"></jsp:include>
     </body>
 

@@ -17,7 +17,7 @@ import carsale.mapper.IRowMapper;
 public class AbstractDao<T> implements GennericDao<T> {
 
   public Connection getConnection() {
-    String dbUrl = "jdbc:mariadb://localhost:3307/carsale";
+	 String dbUrl = "jdbc:mariadb://localhost:3307/carsale";
     String dbClass = "org.mariadb.jdbc.Driver";
     try {
       Class.forName(dbClass);
