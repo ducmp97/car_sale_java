@@ -1,5 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Car-sale</title>
+        <link rel="stylesheet" href="css/abc.css" type="text/css" />
+        <link href="css/styles.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+        <link rel="stylesheet" href="./css/design_fromAD.css" type="text/css">
+        <link href="css/style_AM.css" rel="stylesheet" type="text/css" />
+        <link href="css/content.css" rel="stylesheet" type="text/css" />
+        <link href="./dist/css/sb-admin-2.css" rel="stylesheet">
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
     <div class="header">
 
         <div>
