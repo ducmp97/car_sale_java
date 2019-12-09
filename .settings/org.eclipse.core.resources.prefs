@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+encoding//WebContent/admin/jsp-common/header-admin.jsp=UTF-8
 encoding//WebContent/index.jsp=UTF-8
 encoding//WebContent/postservice.jsp=UTF-8
 encoding//src/carsale/common/Content_en.properties=UTF-8

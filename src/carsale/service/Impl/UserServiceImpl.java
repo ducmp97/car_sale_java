@@ -86,9 +86,10 @@ public class UserServiceImpl implements UserService {
    * @see carsale.service.UserService#updateUser(carsale.model.User)
    */
   @Override
-  public void updateUser(User user, int roleId) {
-    Role role= roleService.getRoleById(roleId);
-    user.setRole(role);
+  public void updateUser(User user) {
+//    Role role= roleService.getRoleById(roleId);
+//    user.setRole(role);
+    System.out.println("User Service Impl"+user.toString());
     userDao.updateUser(user);
   }
 

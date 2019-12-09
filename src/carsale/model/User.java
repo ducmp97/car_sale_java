@@ -82,6 +82,23 @@ public class User implements Serializable {
     this.password = password;
   }
 
+  
+  /**
+   * @param fullName
+   * @param age
+   * @param phone
+   * @param email
+   * @param address
+   */
+  public User(String fullName, int age, String phone, String email, String address) {
+    super();
+    this.fullName = fullName;
+    this.age = age;
+    this.phone = phone;
+    this.email = email;
+    this.address = address;
+  }
+
   /**
    * Gets the user id.
    *

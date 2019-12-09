@@ -52,7 +52,7 @@ public interface UserService {
    * @param user
    *          the user
    */
-  public void updateUser(User user, int roleId);
+  public void updateUser(User user);
 
   /**
    * Delete user.

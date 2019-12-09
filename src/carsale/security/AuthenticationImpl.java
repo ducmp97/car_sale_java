@@ -48,7 +48,7 @@ public class AuthenticationImpl implements Authentication {
       user.setPassword("  ");
       SessionUtil.getInstance().putValue(req, "USER", user);
       if (user.getRole().getRoleCode().equals("ADMIN")) {
-        return "/admin/home";
+        return "/admin/index.jsp";
       } else if (user.getRole().getRoleCode().equals("USER")) {
         return "/index.jsp";
       }
