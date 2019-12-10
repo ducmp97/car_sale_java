@@ -33,7 +33,7 @@
 			<div class="block-title">
 				<div class="title-left"><%=resourceBundle.getString("select_car")%></div>
 				<div class="title-right">
-					<span id="price">0</span>
+					<span id="price"></span>
 				</div>
 			</div>
 			<br>
@@ -49,28 +49,28 @@
 			<div style="display: flex; justify-content: space-between; width: 100%">
 				<div><%=resourceBundle.getString("tax")%></div>
 				<div>
-					<span id="feeTax">0</span>
+					<span id="feeTax"></span>
 				</div>
 			</div>
 			<br>
 			<div style="display: flex; justify-content: space-between; width: 100%">
 				<div><%=resourceBundle.getString("registration_fees")%></div>
 				<div>
-					<span id="feeRegistration">0</span>
+					<span id="feeRegistration"></span>
 				</div>
 			</div>
 			<br>
 			<div style="display: flex; justify-content: space-between; width: 100%">
 				<div><%=resourceBundle.getString("road_tolls")%></div>
 				<div>
-					<span id="feeRoadFee">0</span>
+					<span id="feeRoadFee"></span>
 				</div>
 			</div>
 			<br>
 			<div style="display: flex; justify-content: space-between; width: 100%">
 				<div><%=resourceBundle.getString("civil_insurance_premiums")%></div>
 				<div>
-					<span id="feeInsurrance">0</span>
+					<span id="feeInsurrance"></span>
 				</div>
 			</div>
 			<br>
@@ -78,7 +78,7 @@
 				<div><%=resourceBundle.getString("license_plate_fees")%>P
 				</div>
 				<div>
-					<span id="feeLicensePlate">0</span>
+					<span id="feeLicensePlate"></span>
 				</div>
 			</div>
 			<br>
@@ -89,14 +89,14 @@
 			<div class="block-title">
 				<div class="title-left"><%=resourceBundle.getString("total_fee")%></div>
 				<div class="title-right">
-					<span id="totalFee">0</span>
+					<span id="totalFee"></span>
 				</div>
 			</div>
 			<br>
 			<div class="block-title">
 				<div class="title-left"><%=resourceBundle.getString("total_fee_car")%></div>
 				<div class="title-right">
-					<span id="total">0</span>
+					<span id="total"></span>
 				</div>
 			</div>
 			<br>
@@ -162,6 +162,8 @@
 		}
 		function selectCar() {
 			var price = document.getElementById("selectCar").value;
+			document.getElementById("selectCity").value=0;
+			selectCity();
 			document.getElementById("price").innerHTML = (price * 1.0)
 				.toLocaleString('it-IT', {
 					style: 'currency',
@@ -171,45 +173,55 @@
 		function selectCity() {
 			var fee = document.getElementById("selectCity").value;
 			var fee = fee.split(",");
-			console.log(fee);
-			var price = document.getElementById("selectCar").value;
-			document.getElementById("feeTax").innerHTML = (fee[0] * price)
-				.toLocaleString('it-IT', {
-					style: 'currency',
-					currency: 'VND'
-				});
-			document.getElementById("feeRegistration").innerHTML = (fee[1] * 1.0)
-				.toLocaleString('it-IT', {
-					style: 'currency',
-					currency: 'VND'
-				});
-			document.getElementById("feeRoadFee").innerHTML = (fee[2] * 1.0)
-				.toLocaleString('it-IT', {
-					style: 'currency',
-					currency: 'VND'
-				});
-			document.getElementById("feeInsurrance").innerHTML = (fee[3] * 1.0)
-				.toLocaleString('it-IT', {
-					style: 'currency',
-					currency: 'VND'
-				});
-			document.getElementById("feeLicensePlate").innerHTML = (fee[4] * 1.0)
-				.toLocaleString('it-IT', {
-					style: 'currency',
-					currency: 'VND'
-				});
-			document.getElementById("totalFee").innerHTML = (fee[0] * price
-				+ fee[1] * 1.0 + fee[2] * 1.0 + fee[3] * 1.0 + fee[4] * 1.0)
-				.toLocaleString('it-IT', {
-					style: 'currency',
-					currency: 'VND'
-				});
-			document.getElementById("total").innerHTML = (fee[0] * price
-				+ fee[1] * 1.0 + fee[2] * 1.0 + fee[3] * 1 + fee[4] * 1.0 + price * 1.0)
-				.toLocaleString('it-IT', {
-					style: 'currency',
-					currency: 'VND'
-				});
+			if(fee[0]!="0"){
+				console.log(fee);
+				var price = document.getElementById("selectCar").value;
+				document.getElementById("feeTax").innerHTML = (fee[0] * price)
+					.toLocaleString('it-IT', {
+						style: 'currency',
+						currency: 'VND'
+					});
+				document.getElementById("feeRegistration").innerHTML = (fee[1] * 1.0)
+					.toLocaleString('it-IT', {
+						style: 'currency',
+						currency: 'VND'
+					});
+				document.getElementById("feeRoadFee").innerHTML = (fee[2] * 1.0)
+					.toLocaleString('it-IT', {
+						style: 'currency',
+						currency: 'VND'
+					});
+				document.getElementById("feeInsurrance").innerHTML = (fee[3] * 1.0)
+					.toLocaleString('it-IT', {
+						style: 'currency',
+						currency: 'VND'
+					});
+				document.getElementById("feeLicensePlate").innerHTML = (fee[4] * 1.0)
+					.toLocaleString('it-IT', {
+						style: 'currency',
+						currency: 'VND'
+					});
+				document.getElementById("totalFee").innerHTML = (fee[0] * price
+					+ fee[1] * 1.0 + fee[2] * 1.0 + fee[3] * 1.0 + fee[4] * 1.0)
+					.toLocaleString('it-IT', {
+						style: 'currency',
+						currency: 'VND'
+					});
+				document.getElementById("total").innerHTML = (fee[0] * price
+					+ fee[1] * 1.0 + fee[2] * 1.0 + fee[3] * 1 + fee[4] * 1.0 + price * 1.0)
+					.toLocaleString('it-IT', {
+						style: 'currency',
+						currency: 'VND'
+					});
+			}else{
+				document.getElementById("feeTax").innerHTML = "";
+				document.getElementById("feeRegistration").innerHTML = "";
+				document.getElementById("feeRoadFee").innerHTML = "";
+				document.getElementById("feeInsurrance").innerHTML = "";
+				document.getElementById("feeLicensePlate").innerHTML ="";
+				document.getElementById("totalFee").innerHTML = "";
+				document.getElementById("total").innerHTML = ""
+			}
 		}
 	</script>
 </body>
