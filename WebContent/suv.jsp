@@ -29,13 +29,6 @@
 
 	<!-- Content -->
 	<div class="container-news">
-		<div class="container-top">
-			<ul>
-				<li><a href="index.jsp"> <span>home</span>
-					</a> <span>|</span></li>
-				<li><a href="new.jsp"><%=resourceBundle.getString("tintucmoi")%></a></li>
-			</ul>
-		</div>
 		<div class="container-left">
 			<div class="block block-news-event">
 				<div div class="block-title">

@@ -93,13 +93,7 @@ input[type=email] {
 								class="form-control" name="address" id="address"
 								placeholder="Please Enter Address" />
 						</div>
-						<div class="form-group">
-							<label>User Level</label> <label class="radio-inline"> <input
-								name="rdoLevel" value="1" checked="" type="radio">Admin
-							</label> <label class="radio-inline"> <input name="rdoLevel"
-								value="2" type="radio">Member
-							</label>
-						</div>
+						
 						<br> <input type="submit" class="btn btn-default"
 							value="Update user" name="submit" /> <input type="reset"
 							class="btn btn-default" value="Reset" name="reset" />

@@ -45,7 +45,7 @@
                 <div id="prlist">
                     <h3>Add New</h3>
                     <i class="fa fa-plus" aria-hidden="true"></i>&nbsp<a +
-                        href="cardetail.jsp?id=' + array[i].carId + '" class="button">Add</a>
+                        href="new-add.jsp" class="button">Add</a>
                 </div>
                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                     <thead>

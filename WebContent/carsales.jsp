@@ -177,8 +177,8 @@
                 
                 for(let i=0;i<dur;i++){
                 	var month=i+1;
-                	var inpermonth=(price*rate*0.01)-(cashpermonth*i*rate*0.01);
-                	var sum=cashpermonth+(price*rate*0.01)-(cashpermonth*i*rate*0.01);
+                	var inpermonth=(loan*rate*0.01)-(cashpermonth*i*rate*0.01);
+                	var sum=cashpermonth+(loan*rate*0.01)-(cashpermonth*i*rate*0.01);
                 	total+=inpermonth;
                 	var remain=price-cashpermonth*i;
                 	table+='<tr>'+
